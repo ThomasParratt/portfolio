@@ -244,9 +244,15 @@ function draw() {
 gameLoop();
   }, []);
 
+
   return (
-    <div className="flex justify-center items-center h-full">
-      <canvas ref={canvasRef} width={800} height={600} className="border rounded shadow-md" />
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <canvas
+        ref={canvasRef}
+        width={800}
+        height={600}
+        className="border rounded shadow-md bg-white"
+      />
     </div>
   );
 }

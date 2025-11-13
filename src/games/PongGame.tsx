@@ -10,6 +10,24 @@ export default function PongGame() {
     let twoPlayerMode = false; // Default is one-player mode
 
     // Game Constants
+    const PADDLE_WIDTH = 15; 
+    const PADDLE_HEIGHT = 110;
+    const PADDLE_SPEED = 500;
+    const BALL_SIZE = 15;
+    const BUFFER = 15;
+    const MAX_BALL_SPEED = 1500;
+    const WINNING_SCORE = 5;
+    const AI_UPDATE_INTERVAL = 1000;
+    const INITIAL_BALLSPEED_X = 800;
+    const INITIAL_BALLSPEED_Y = 25;
+    const PONG_UP_1 = 'q';
+    const PONG_DOWN_1 = 's';
+    const PONG_UP_2 = 'o';
+    const PONG_DOWN_2 = 'k';
+
+    let lastTime = performance.now();
+    let aiLastUpdateTime: number = 0;
+    let aiTargetY = (canvas.height - PADDLE_HEIGHT) / 2; // AI's current target
     const paddleWidth = 10, paddleHeight = 100;
     const ballSize = 10;
     const canvasWidth = canvas.width;
@@ -69,16 +87,54 @@ export default function PongGame() {
     function resetGame() {
         player1Y = (canvasHeight - paddleHeight) / 2;
         player2Y = (canvasHeight - paddleHeight) / 2;
-        ballX = canvasWidth / 2;
+        ballX = canvasWidth / 2 - BALL_SIZE / 2 + 1.5;
         ballY = canvasHeight / 2;
-        ballSpeedX = 5;
-        ballSpeedY = 3;
+        ballSpeedX = 0;
+        ballSpeedY = 0;
+    
+        setTimeout(() => {
+        if (twoPlayerMode) {
+            ballSpeedX = INITIAL_BALLSPEED_X * (Math.random() > 0.5 ? 1 : -1);
+            ballSpeedX = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
+        }
+        else {
+            ballSpeedX = INITIAL_BALLSPEED_X * -1;
+            ballSpeedX = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
+        }
+        }, 1000); // 1000ms = 1 second delay
         player1Score = 0;
         player2Score = 0;
     }
 
+    // Predict where the ball will go along the Y-axis when it reaches the target X (AI's paddle)
+    function predictBallY(ballX: number, ballY: number, ballVX: number, ballVY: number, targetX: number): number {
+        while (ballX < targetX) { // as long as the ball hasn't passed the target X position
 
-    function updatePlayerPositions() {
+        // calculates the time it takes for the ball to hit either the top or bottom wall of the canvas
+        const timeToWallY = ballVY > 0 
+            ? (canvasHeight - ballY - BALL_SIZE) / ballVY 
+            : -ballY / ballVY;
+
+        // calculates the time it will take for the ball to travel horizontally to the target X position
+        const timeToTargetX = (targetX - ballX) / ballVX;
+    
+        // simulates ball movement
+        if (timeToWallY < timeToTargetX) { // the ball will hit the wall before it reaches the target
+            ballX += ballVX * timeToWallY;
+            ballY += ballVY * timeToWallY;
+            ballVY *= -1; // Ball bounces when it hits the wall
+        } 
+        else { // the ball will reach the target X before hitting any wall
+            ballX += ballVX * timeToTargetX;
+            ballY += ballVY * timeToTargetX;
+            break ; // ball reaches target
+        }
+        }
+        return ballY; // Return the predicted Y position of the ball
+    }
+
+
+    /*function updatePlayerPositions() {
         // Player 1 movement (W and S keys)
         if (keysPressed['w']) player1Y -= paddleSpeed;
         if (keysPressed['s']) player1Y += paddleSpeed;
@@ -96,11 +152,62 @@ export default function PongGame() {
         // Ensure paddles stay within bounds
         player1Y = Math.max(0, Math.min(canvasHeight - paddleHeight, player1Y));
         player2Y = Math.max(0, Math.min(canvasHeight - paddleHeight, player2Y));
+    }*/
+
+    function updatePlayerPositions(deltaTime: number) {
+        // Player 1 movement
+        if (keysPressed[PONG_UP_1])
+            player1Y -= PADDLE_SPEED * deltaTime;
+        if (keysPressed[PONG_DOWN_1]) 
+            player1Y += PADDLE_SPEED * deltaTime;
+
+        if (twoPlayerMode && player2) {
+        // Player 2 movement
+        if (keysPressed[PONG_UP_2]) 
+            player2Y -= PADDLE_SPEED * deltaTime;
+        if (keysPressed[PONG_DOWN_2]) 
+            player2Y += PADDLE_SPEED * deltaTime;
+        } 
+        else {
+
+            if (!player2)
+                return ;
+
+            if (ballSpeedX < 0) {
+                player1Y = Math.max(0, Math.min(canvasHeight - PADDLE_HEIGHT, player1Y));
+                player2Y = Math.max(0, Math.min(canvasHeight - PADDLE_HEIGHT, player2Y));
+                return ; //Prevents unnecessary calculations if the ball is moving away from the AI paddle
+            }
+
+            const now = performance.now();
+
+            if (now - aiLastUpdateTime >= 1000) {
+                aiTargetY = predictBallY(
+                    ballX, ballY,
+                    ballSpeedX, ballSpeedY,
+                    canvasWidth - PADDLE_WIDTH - BUFFER
+                );
+                aiLastUpdateTime = now;
+            }
+            // Move paddle smoothly toward predicted Y
+            const paddleCenter = player2Y + PADDLE_HEIGHT / 2;
+
+            if (paddleCenter < aiTargetY - PADDLE_SPEED * deltaTime) {
+                player2Y += PADDLE_SPEED * deltaTime;
+            } else if (paddleCenter > aiTargetY + PADDLE_SPEED * deltaTime) {
+                player2Y -= PADDLE_SPEED * deltaTime;
+            }
+        }
+        player1Y = Math.max(0, Math.min(canvasHeight - PADDLE_HEIGHT, player1Y));
+        player2Y = Math.max(0, Math.min(canvasHeight - PADDLE_HEIGHT, player2Y));
     }
 
 
     // Game Loop
-    function gameLoop() {
+    function gameLoop(currentTime: number) {
+        const deltaTime = (currentTime - lastTime) / 1000; // seconds
+        lastTime = currentTime;
+
         if (gameState === 'menu') {
             drawMenu();
         } 
@@ -108,12 +215,14 @@ export default function PongGame() {
             drawResult();
         }
         else {
-            update();
+            update(deltaTime);
             draw();
         }
         requestAnimationFrame(gameLoop);
     }
 
+
+    //START FROM HERE NOW!!
 
     function update() {
         updatePlayerPositions();

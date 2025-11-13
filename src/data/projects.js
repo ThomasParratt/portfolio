@@ -5,7 +5,7 @@ const projects = [
         description: 'A friend-system demo using React and JWT-based auth.',
         tech: ['React', 'Tailwind', 'Node'],
         repo: '#',
-        live: '#'
+        live: '/pong'
     },
     {
         id: 'p2',

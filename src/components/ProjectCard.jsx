@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 
 export default function ProjectCard({p}) {
@@ -10,7 +11,7 @@ export default function ProjectCard({p}) {
                 {p.tech.map(t=> <span key={t} className="px-2 py-1 border rounded">{t}</span>)}
             </div>
             <div className="mt-4 flex gap-2">
-                <a href={p.live} className="text-sm underline">Live</a>
+                <Link to={p.live} className="text-sm underline">Live</Link>
                 <a href={p.repo} className="text-sm underline">Code</a>
             </div>
         </article>

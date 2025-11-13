@@ -5,10 +5,11 @@ import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import PongGame from "./games/PongGame";
 import { Routes, Route, Link } from "react-router-dom"
 
-// Why is the footer now on top of the Navbar?
-function App() {
+
+export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
       <Navbar />
@@ -18,36 +19,10 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/pong" element={<PongGame />} />
         </Routes>
       </main>
       <Footer />
     </div>
   )
 }
-
-export default App
-
-/*export default function App() {
-  return (
-    <div className="p-6">
-      <nav className="flex gap-4 mb-6">
-        <Link to="/" className="text-blue-600 hover:underline">Home</Link>
-        <Link to="/about" className="text-blue-600 hover:underline">About</Link>
-      </nav>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </div>
-  );
-}*/
-
-/*<main className="flex-grow">
-        <Routes>
-                <Route path="/" element={<Hero />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
-      </main>*/

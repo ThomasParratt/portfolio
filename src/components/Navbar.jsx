@@ -31,12 +31,6 @@ export default function Navbar() {
                     </ul>
                 <div className="md:hidden">{/* mobile menu placeholder */}</div>
             </nav>
-            <Routes>
-                <Route path="/" element={<Hero />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
         </header>
     )
 }

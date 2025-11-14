@@ -18,8 +18,8 @@ export default function PongGame() {
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;
     const AI_UPDATE_INTERVAL = 1000;
-    const INITIAL_BALLSPEED_X = 800;
-    const INITIAL_BALLSPEED_Y = 25;
+    const INITIAL_BALLSPEED_X = 450;
+    const INITIAL_BALLSPEED_Y = 20;
     const PONG_UP_1 = 'q';
     const PONG_DOWN_1 = 's';
     const PONG_UP_2 = 'o';
@@ -36,14 +36,9 @@ export default function PongGame() {
     let player2Y = (canvasHeight - paddleHeight) / 2;
     let ballX = canvasWidth / 2, ballY = canvasHeight / 2;
     let ballSpeedX = 5, ballSpeedY = 3;
-    const paddleSpeed = 6;
-    let playerNames = ["Tom", "Jacob"];
-    let player1 = playerNames[Math.floor(Math.random() * 2)];
-    let player2 = playerNames[Math.floor(Math.random() * 2)];
-    while (player2 === player1) {
-    // If player2 is the same as player1, select a new player2
-    player2 = playerNames[Math.floor(Math.random() * 2)];
-    }
+    let playerNames = ["Player 1", "Player 2"];
+    let player1 = playerNames[0];
+    let player2 = playerNames[1];
     let winner = player1;
     let player1Score = 0;
     let player2Score = 0;
@@ -190,7 +185,7 @@ export default function PongGame() {
 
             const now = performance.now();
 
-            if (now - aiLastUpdateTime >= 1000) {
+            if (now - aiLastUpdateTime >= AI_UPDATE_INTERVAL) {
                 aiTargetY = predictBallY(
                     ballX, ballY,
                     ballSpeedX, ballSpeedY,
@@ -345,13 +340,6 @@ export default function PongGame() {
         }
     }
 
-    function resetBall() { //is this used??
-        ballX = canvasWidth / 2;
-        ballY = canvasHeight / 2;
-        ballSpeedX = -ballSpeedX;
-        ballSpeedY = 3 * (Math.random() > 0.5 ? 1 : -1);
-    }
-
     function drawResult() {
         ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
@@ -408,12 +396,14 @@ export default function PongGame() {
         ctx.fillText("" + player2Score, canvasWidth * 0.75, 70); */
 
         // Calculate the width of the text for player 1 and adjust to centre
-        const player1Text = player1 + ": " + player1Score;
+        //const player1Text = player1 + ": " + player1Score;
+        const player1Text = player1Score.toString();
         const player1TextWidth = ctx.measureText(player1Text).width;
         ctx.fillText(player1Text, (canvasWidth * 0.25) - (player1TextWidth / 2), 70);
 
         // Calculate the width of the text for player 2 and adjust to centre
-        const player2Text = player2 + ": " + player2Score;
+        //const player2Text = player2 + ": " + player2Score;
+        const player2Text = player2Score.toString();
         const player2TextWidth = ctx.measureText(player2Text).width;
         ctx.fillText(player2Text, (canvasWidth * 0.75) - (player2TextWidth / 2), 70);
     }

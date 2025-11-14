@@ -85,7 +85,16 @@ export default function PongGame() {
     });
 
     function resetGame() {
-        player1Y = (canvasHeight - paddleHeight) / 2;
+        if (!player1 || !player2)
+		    return ;
+
+        player1Y = (canvasHeight - PADDLE_HEIGHT) / 2;
+        player2Y = (canvasHeight - PADDLE_HEIGHT) / 2;
+        ballReset(twoPlayerMode, canvasWidth, canvasHeight);
+        player1Score = 0;
+        player2Score = 0;
+
+        /*player1Y = (canvasHeight - paddleHeight) / 2;
         player2Y = (canvasHeight - paddleHeight) / 2;
         ballX = canvasWidth / 2 - BALL_SIZE / 2 + 1.5;
         ballY = canvasHeight / 2;
@@ -103,7 +112,7 @@ export default function PongGame() {
         }
         }, 1000); // 1000ms = 1 second delay
         player1Score = 0;
-        player2Score = 0;
+        player2Score = 0;*/
     }
 
     // Predict where the ball will go along the Y-axis when it reaches the target X (AI's paddle)
@@ -224,60 +233,119 @@ export default function PongGame() {
 
     //START FROM HERE NOW!!
 
-    function update() {
-        updatePlayerPositions();
-        // Ball Movement
-        ballX += ballSpeedX;
-        ballY += ballSpeedY;
+    function ballMove(deltaTime: number) {
+        ballX += ballSpeedX * deltaTime;
+        ballY += ballSpeedY * deltaTime;
+    }
 
-        // Collision with top and bottom
-        if (ballY <= 0 || ballY + ballSize >= canvasHeight) ballSpeedY *= -1;
+    function checkCollisions(player1Y, player2Y, canvasHeight, canvasWidth) {
+        // Ball collision with top and bottom
+        if (ballY <= 0) {
+            ballY = 0; // Push ball back inside. Fixes wall "hugging"
+            ballSpeedY *= -1;
+        } 
+        else if (ballY + BALL_SIZE >= canvasHeight) {
+            ballY = canvasHeight - BALL_SIZE; // Push ball back inside. Fixes wall "hugging"
+            ballSpeedY *= -1;
+        }
+
 
         // Player 1 paddle collision
-        if (ballX === paddleWidth + 15 &&
-            ballY + ballSize >= player1Y &&
-            ballY <= player1Y + paddleHeight) {
-
+        if (ballX <= PADDLE_WIDTH + BUFFER && ballY + BALL_SIZE >= player1Y && ballY <= player1Y + PADDLE_HEIGHT) {
+            //this.currentRallyLen++;
+            const hitPos = (ballY + BALL_SIZE / 2) - (player1Y + PADDLE_HEIGHT / 2); // calculates the difference between the centres of the ball and the paddle
+            const normalized = hitPos / (PADDLE_HEIGHT / 2); // -1 (top) to 1 (bottom)
+        
+            const bounceAngle = normalized * Math.PI / 4; // -1 (-45 degrees) to 1 (+45 degrees)
+            const speed = Math.sqrt(ballSpeedX ** 2 + ballSpeedY ** 2); // keep same speed after bounce (pythagoras)
+        
+            const newSpeed = Math.min(speed * 1.025, MAX_BALL_SPEED);
+            ballSpeedX = Math.cos(bounceAngle) * newSpeed; // reflected to right
+            ballSpeedY = Math.sin(bounceAngle) * speed;
+        
+            // Make sure ball is moving right
+            if (ballSpeedX < 0) 
                 ballSpeedX *= -1;
-
-                /* // Calculate where the ball hit the paddle
-                const hitPos = (ballY + ballSize / 2) - (player1Y + paddleHeight / 2); //how far the ball's center is from the paddle's center vertically
-                const normalized = hitPos / (paddleHeight / 2); // Value between -1 and 1
-                ballSpeedY = normalized * 3; // Max vertical speed */
         }
 
         // Player 2 paddle collision
-        if (ballX + ballSize === canvasWidth - paddleWidth - 15 &&
-            ballY + ballSize >= player2Y &&
-            ballY <= player2Y + paddleHeight) {
-
-                ballSpeedX *= -1;
-
-                /* // Calculate where the ball hit the paddle
-                const hitPos = (ballY + ballSize / 2) - (player2Y + paddleHeight / 2);
-                const normalized = hitPos / (paddleHeight / 2); // Value between -1 and 1
-                ballSpeedY = normalized * 3; // Max vertical speed */
-        }
-
-        // Reset ball if missed and count score
-        if (ballX < 0) {
-            player2Score++;
-            if (player2Score === 5) {
-                gameState = 'result';
-                winner = player2;
-            }
-            resetBall();
-        }
-        if (ballX > canvasWidth) {
-            player1Score++;
-            if (player1Score === 5) {
-                gameState = 'result';
-            }
-            resetBall();
+        if (ballX + BALL_SIZE >= canvasWidth - PADDLE_WIDTH - BUFFER && ballY + BALL_SIZE >= player2Y && ballY <= player2Y + PADDLE_HEIGHT) {
+            //this.currentRallyLen++;
+            const hitPos = (ballY + BALL_SIZE / 2) - (player2Y + PADDLE_HEIGHT / 2);
+            const normalized = hitPos / (PADDLE_HEIGHT / 2);
+        
+            const bounceAngle = normalized * Math.PI / 4;
+            const speed = Math.sqrt(ballSpeedX ** 2 + ballSpeedY ** 2);
+        
+            const newSpeed = Math.min(speed * 1.025, MAX_BALL_SPEED);
+            ballSpeedX = -Math.cos(bounceAngle) * newSpeed; // reflected to left
+            ballSpeedY = Math.sin(bounceAngle) * speed;
+        
+            if (ballSpeedX > 0) 
+                ballSpeedY *= -1;
         }
     }
 
-    function resetBall() {
+    function ballReset(twoPlayerMode, canvasWidth, canvasHeight) {
+        /*if (this.currentRallyLen > this.longestRally)
+            this.longestRally = this.currentRallyLen;
+        this.totalHits += this.currentRallyLen;
+        this.pointsPlayed++;
+        this.currentRallyLen = 0;*/
+        ballX = canvasWidth / 2 - BALL_SIZE / 2 + 1.5;
+        ballY = canvasHeight / 2;
+    
+        // Pause the ball temporarily
+        ballSpeedX = 0;
+        ballSpeedY = 0;
+    
+        setTimeout(() => {
+        if (twoPlayerMode) {
+            ballSpeedX = INITIAL_BALLSPEED_X * (Math.random() > 0.5 ? 1 : -1);
+            ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
+        }
+        else {
+            ballSpeedX = INITIAL_BALLSPEED_X * -1;
+            ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
+        }
+        }, 1000); // 1000ms = 1 second delay
+  }
+
+    function update(deltaTime: number) {
+        if (gameState == "playing")
+        {
+            if (!player1 || !player2)
+		        return ;
+            updatePlayerPositions(deltaTime);
+            ballMove(deltaTime);
+            checkCollisions(player1Y, player2Y, canvasHeight, canvasWidth);
+
+            // Reset ball if missed and count score
+            if (ballX < 0) {
+                player2Score++;
+                if (player2Score === WINNING_SCORE) {
+                    gameState = 'result';
+                    //this.averageRally = this.ball.totalHits / this.ball.pointsPlayed;
+                    winner = player2;
+                    //this.duration = performance.now() - this.startTime;
+                }
+                ballReset(twoPlayerMode, canvasWidth, canvasHeight);
+            }
+
+            if (ballX > canvasWidth) {
+                player1Score++;
+                if (player1Score === WINNING_SCORE) {
+                    gameState = 'result';
+                    //this.averageRally = this.ball.totalHits / this.ball.pointsPlayed;
+                    winner = player1;
+                    //this.duration = performance.now() - this.startTime;
+                }
+                ballReset(twoPlayerMode, canvasWidth, canvasHeight);
+            }
+        }
+    }
+
+    function resetBall() { //is this used??
         ballX = canvasWidth / 2;
         ballY = canvasHeight / 2;
         ballSpeedX = -ballSpeedX;
@@ -289,7 +357,7 @@ export default function PongGame() {
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
         ctx.fillStyle = 'white';
-        ctx.font = "30px 'Courier New', monospace";
+        ctx.font = "30px 'font-sans', monospace";
         const pong = winner + " is the winner!";
         const pongWidth = ctx.measureText(pong).width;
         ctx.fillText(pong, (canvasWidth * 0.5) - (pongWidth / 2), canvasHeight / 4);
@@ -300,12 +368,12 @@ export default function PongGame() {
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
         ctx.fillStyle = 'white';
-        ctx.font = "100px 'Courier New', monospace";
+        ctx.font = "100px 'font-sans', monospace";
         const pong = "PONG";
         const pongWidth = ctx.measureText(pong).width;
         ctx.fillText(pong, (canvasWidth * 0.5) - (pongWidth / 2), canvasHeight / 4);
 
-        ctx.font = "30px 'Courier New', monospace"; 
+        ctx.font = "30px 'font-sans', monospace"; 
         const text1 = "vs computer (Press '1')";
         const text1Width = ctx.measureText(text1).width;
         const text2 = "vs human (Press '2')";
@@ -334,7 +402,7 @@ export default function PongGame() {
         ctx.fillRect(ballX, ballY, ballSize, ballSize);
 
         //Draw scores
-        ctx.font = "50px 'Courier New', monospace";
+        ctx.font = "50px 'font-sans', monospace";
         
         /* ctx.fillText("" + player1Score, canvasWidth * 0.25, 70);
         ctx.fillText("" + player2Score, canvasWidth * 0.75, 70); */
@@ -350,7 +418,7 @@ export default function PongGame() {
         ctx.fillText(player2Text, (canvasWidth * 0.75) - (player2TextWidth / 2), 70);
     }
 
-    gameLoop();
+    gameLoop(performance.now());
   }, []);
 
 

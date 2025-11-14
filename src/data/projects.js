@@ -1,9 +1,9 @@
 const projects = [
     {
         id: 'p1',
-        title: 'React Game UI',
-        description: 'A friend-system demo using React and JWT-based auth.',
-        tech: ['React', 'Tailwind', 'Node'],
+        title: 'Pong!',
+        description: 'A simple Pong game written in TypeScript',
+        tech: ['React', 'TypeScript', 'Node'],
         repo: '#',
         live: '/pong'
     },

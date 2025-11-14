@@ -2,7 +2,7 @@ import React from 'react'
 import Projects from './Projects'
 import Contact from './Contact'
 import { Routes, Route, Link } from "react-router-dom"
-import heroImage from '../assets/Image.png'
+import heroImage from '../assets/Image.jpg'
 
 
 export default function Hero() {
@@ -17,7 +17,7 @@ export default function Hero() {
                     <Link to="/contact" className="px-5 py-3 rounded-lg bg-gray-900 text-white">Contact me</Link>
                 </div>
                 <div className="mt-8 flex justify-center">
-                    <img src={heroImage} className="w-full max-w-lg mx-auto" alt="Example" />
+                    <img src={heroImage} className="w-full max-w-lg mx-auto rounded-full" alt="Example" />
                 </div>
             </div>
         </section>

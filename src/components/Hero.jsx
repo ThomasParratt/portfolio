@@ -2,7 +2,7 @@ import React from 'react'
 import Projects from './Projects'
 import Contact from './Contact'
 import { Routes, Route, Link } from "react-router-dom"
-import heroImage from '../assets/Image.jpg'
+import heroImage from '../assets/me.jpg'
 
 
 export default function Hero() {

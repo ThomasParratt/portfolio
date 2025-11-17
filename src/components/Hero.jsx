@@ -3,6 +3,8 @@ import Projects from './Projects'
 import Contact from './Contact'
 import { Routes, Route, Link } from "react-router-dom"
 import heroImage from '../assets/me.jpg'
+import LinkedInLogo from '../assets/LinkedIn_logo.png'
+import GitHubLogo from '../assets/GitHub_logo.svg'
 
 
 export default function Hero() {
@@ -25,16 +27,16 @@ export default function Hero() {
                 <img 
                     src={heroImage} 
                     alt="Tom" 
-                    className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover border-4 border-gray-300 shadow-lg"
+                    className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-gray-300 shadow-lg"
                 />
 
                 {/* SATELLITE CIRCLES */}
                 {[
-                    { text: "Projects", to: "/projects", x: "0%", y: "200%" },
-                    { text: "About", to: "/about", x: "-100%", y: "-180%" },
-                    { text: "Contact", to: "/contact", x: "100%", y: "-180%" },
-                    { text: "LinkedIn", to: "https://www.linkedin.com/in/thomas-parratt-hive/", x: "-200%", y: "0%" },
-                    { text: "GitHub", to: "https://github.com/ThomasParratt", x: "200%", y: "0%" },
+                    { text: "PROJECTS", to: "/projects", x: "0%", y: "200%", logo: null},
+                    { text: "ABOUT", to: "/about", x: "-100%", y: "-180%", logo: null },
+                    { text: "CONTACT", to: "/contact", x: "100%", y: "-180%", logo: null },
+                    { text: "LinkedIn", to: "https://www.linkedin.com/in/thomas-parratt-hive/", x: "-200%", y: "0%", logo: LinkedInLogo },
+                    { text: "GitHub", to: "https://github.com/ThomasParratt", x: "200%", y: "0%", logo: GitHubLogo },
                 ].map((item, i) => (
                     <Link
                         key={i}
@@ -48,7 +50,15 @@ export default function Hero() {
                             transform: `translate(${item.x}, ${item.y})`
                         }}
                     >
-                        {item.text}
+                        {item.logo ? (
+                            <img
+                                src={item.logo}
+                                alt={item.text}
+                                className="w-10 h-10 md:w-14 md:h-14 object-contain"
+                            />
+                        ) : (
+                            <span className="text-sm md:text-base font-medium">{item.text}</span>
+                        )}
                     </Link>
                 ))}
             </div>

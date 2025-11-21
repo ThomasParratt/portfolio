@@ -25,7 +25,7 @@ export default function PongGameFace() {
     const PADDLE_WIDTH = 15; 
     const PADDLE_HEIGHT = 110;
     const PADDLE_SPEED = 500;
-    const BALL_SIZE = 75;
+    const BALL_SIZE = 50;
     const BUFFER = 15;
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;
@@ -48,7 +48,7 @@ export default function PongGameFace() {
     let ballX = canvasWidth / 2, ballY = canvasHeight / 2;
     let ballSpeedX = INITIAL_BALLSPEED_X * (Math.random() > 0.5 ? 1 : -1);
     let ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
-    let playerNames = ["Player 1", "Player 2"];
+    let playerNames = ["Good job! I'm impressed!", "Better luck next time!"];
     let player1 = playerNames[0];
     let player2 = playerNames[1];
     let winner = player1;
@@ -339,7 +339,7 @@ export default function PongGameFace() {
 
         ctx.fillStyle = 'black';
         ctx.font = "30px 'font-sans', monospace";
-        const pong = winner + " is the winner!";
+        const pong = winner;
         const pongWidth = ctx.measureText(pong).width;
         ctx.fillText(pong, (canvasWidth * 0.5) - (pongWidth / 2), canvasHeight / 4);
     }

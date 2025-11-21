@@ -12,7 +12,7 @@ export default function Projects() {
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     {hiveProjects.map(p=> <ProjectCard key={p.id} p={p} />)}
                 </div>
-                <h2 className="text-2xl font-bold">Other selected projects</h2>
+                <h2 className="mt-8 text-2xl font-bold">Other selected projects</h2>
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     {projects.map(p=> <ProjectCard key={p.id} p={p} />)}
                 </div>

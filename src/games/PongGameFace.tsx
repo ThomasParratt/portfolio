@@ -366,6 +366,8 @@ export default function PongGameFace() {
         //ctx.fillStyle = 'black';
         //ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)'; // 50% transparent white
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Draw player paddles
         ctx.fillStyle = 'black';
@@ -412,8 +414,8 @@ export default function PongGameFace() {
     <div className="flex items-center justify-center min-h-screen">
       <canvas
         ref={canvasRef}
-        width={800}
-        height={600}
+        width={600}
+        height={450}
         className="border rounded shadow-md bg-transparent"
       />
     </div>

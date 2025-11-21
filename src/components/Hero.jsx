@@ -1,18 +1,25 @@
 import React from 'react'
 import Projects from './Projects'
 import Contact from './Contact'
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route, Link, useLocation } from "react-router-dom"
 import heroImage from '../assets/me.jpg'
 import LinkedInLogo from '../assets/LinkedIn_logo.png'
 import GitHubLogo from '../assets/GitHub_logo.svg'
 import { useNavigate } from "react-router-dom";
 import PongGameFace from '../games/PongGameFace';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export default function Hero() {
     //const navigate = useNavigate();
     const [showPong, setShowPong] = useState(false);
+    const location = useLocation();
+
+    // Hide the Pong game whenever the route changes
+    useEffect(() => {
+        setShowPong(false);
+    }, [location]);
+
     return (
         <section className="pt-24 pb-12">
             <div className="max-w-4xl mx-auto px-6 text-center">
@@ -38,7 +45,7 @@ export default function Hero() {
             </div>
             {/* Pong overlay */}
             {showPong && (
-                <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                <div className="mt-8 absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                     <PongGameFace />
                 </div>
             )}

@@ -6,6 +6,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import PongGame from "./games/PongGame";
+import PongGameFace from "./games/PongGameFace"
 import { Routes, Route, Link } from "react-router-dom"
 
 
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pong" element={<PongGame />} />
+          <Route path="/pongFace" element={<PongGameFace />} />
         </Routes>
       </main>
       <Footer />

@@ -23,9 +23,9 @@ export default function Hero() {
     return (
         <section className="pt-24 pb-12">
             <div className="max-w-4xl mx-auto px-6 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold">
+                <h1 className="text-4xl md:text-6xl text-sky-700 font-bold">
                     Hi, I'm Tom.
-                    <span className="block text-lg md:text-xl mt-4 font-medium text-gray-600 max-w-[600px] mx-auto">
+                    <span className="block text-lg md:text-xl mt-4 font-medium text-orange-600 max-w-[600px] mx-auto">
                         Software developer — building my foundation through meaningful, user-focused projects.
                     </span>
                 </h1>
@@ -33,14 +33,14 @@ export default function Hero() {
                     <img 
                         src={heroImage} 
                         alt="Tom" 
-                        className="w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-gray-300 shadow-lg cursor-pointer"
+                        className="w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white rounded-2xl shadow-xl cursor-pointer"
                         //onClick={() => navigate("/pongFace")}
                         onClick={() => setShowPong(true)}
                     />
                 </div>
                 <div className="mt-8 flex justify-center gap-4">
-                    <Link to="/projects" className="px-5 py-3 rounded-lg border">See my work</Link>
-                    <Link to="/contact" className="px-5 py-3 rounded-lg bg-gray-900 text-white">Contact</Link>
+                    <Link to="/projects" className="px-5 py-3 rounded-2xl border-4 border-white bg-sky-700 text-white shadow-xl font-bold">See my work</Link>
+                    <Link to="/contact" className="px-5 py-3 rounded-2xl border-4 border-white bg-sky-700 text-white shadow-xl font-bold">Contact</Link>
                 </div>
             </div>
             {/* Pong overlay */}

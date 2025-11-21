@@ -12,7 +12,7 @@ import { Routes, Route, Link } from "react-router-dom"
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+    <div className="min-h-screen flex flex-col bg-sky-50 text-gray-900">
       <Navbar />
       <main className="flex-grow">
         <Routes>

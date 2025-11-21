@@ -29,7 +29,6 @@ export default function PongGame() {
     let aiLastUpdateTime: number = 0;
     let aiTargetY = (canvas.height - PADDLE_HEIGHT) / 2; // AI's current target
     const paddleWidth = 10, paddleHeight = 100;
-    const ballSize = 10;
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
     let player1Y = (canvasHeight - paddleHeight) / 2;
@@ -387,7 +386,7 @@ export default function PongGame() {
             ctx.fillRect(canvasWidth / 2, i, 3, canvasHeight / 40);
 
         // Draw ball
-        ctx.fillRect(ballX, ballY, ballSize, ballSize);
+        ctx.fillRect(ballX, ballY, BALL_SIZE, BALL_SIZE);
 
         //Draw scores
         ctx.font = "50px 'font-sans', monospace";

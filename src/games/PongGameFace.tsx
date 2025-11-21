@@ -25,7 +25,7 @@ export default function PongGameFace() {
     const PADDLE_WIDTH = 15; 
     const PADDLE_HEIGHT = 110;
     const PADDLE_SPEED = 500;
-    const BALL_SIZE = 15;
+    const BALL_SIZE = 50;
     const BUFFER = 15;
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;
@@ -41,7 +41,6 @@ export default function PongGameFace() {
     let aiLastUpdateTime: number = 0;
     let aiTargetY = (canvas.height - PADDLE_HEIGHT) / 2; // AI's current target
     const paddleWidth = 10, paddleHeight = 100;
-    const ballSize = 10;
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
     let player1Y = (canvasHeight - paddleHeight) / 2;
@@ -400,10 +399,10 @@ export default function PongGameFace() {
 
         // Draw ball
         if (ballImg.complete) { // only draw if image loaded
-            ctx.drawImage(ballImg, ballX, ballY, ballSize, ballSize);
+            ctx.drawImage(ballImg, ballX, ballY, BALL_SIZE, BALL_SIZE);
         } else {
             ctx.fillStyle = 'white';
-            ctx.fillRect(ballX, ballY, ballSize, ballSize);
+            ctx.fillRect(ballX, ballY, BALL_SIZE, BALL_SIZE);
         }
 
         //Draw scores

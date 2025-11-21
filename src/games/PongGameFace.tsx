@@ -331,10 +331,13 @@ export default function PongGameFace() {
     }
 
     function drawResult() {
-        ctx.fillStyle = 'black';
-        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        //ctx.fillStyle = 'black';
+        //ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.95)'; // 50% transparent white
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = 'white';
+        ctx.fillStyle = 'black';
         ctx.font = "30px 'font-sans', monospace";
         const pong = winner + " is the winner!";
         const pongWidth = ctx.measureText(pong).width;
@@ -414,8 +417,8 @@ export default function PongGameFace() {
     <div className="flex items-center justify-center min-h-screen">
       <canvas
         ref={canvasRef}
-        width={600}
-        height={450}
+        width={800}
+        height={600}
         className="border rounded shadow-md bg-transparent"
       />
     </div>

@@ -13,7 +13,7 @@ export default function Hero() {
             <div className="max-w-4xl mx-auto px-6 text-center">
                 <h1 className="text-4xl md:text-6xl font-bold">
                     Hi, I'm Tom.
-                    <span className="block text-lg md:text-xl mt-4 font-medium text-gray-600">
+                    <span className="block text-lg md:text-xl mt-4 font-medium text-gray-600 max-w-[600px] mx-auto">
                         Software developer — building my foundation through meaningful, user-focused projects.
                     </span>
                 </h1>

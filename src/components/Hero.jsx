@@ -24,7 +24,7 @@ export default function Hero() {
         <section className="pt-24 pb-12">
             <div className="max-w-5xl mx-auto px-6">
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <article className="border-4 border-white rounded-2xl p-4 shadow-xl transition bg-sky-700">
+                    <article className="md:row-span-2 border-4 border-white rounded-2xl p-4 shadow-xl transition bg-sky-700">
                         <h1 className="text-4xl md:text-6xl text-white font-bold">
                             Hi, I'm Tom.
                             <span className="block text-lg md:text-xl mt-4 font-medium text-orange-600 max-w-[600px] mx-auto">
@@ -40,12 +40,14 @@ export default function Hero() {
                             />
                         </div>
                     </article>
-                </div>
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article className="border-4 border-white rounded-2xl p-4 shadow-xl transition bg-sky-700">
                         <div className="mt-8 flex justify-center gap-4">
                             <Link to="/projects" className="px-5 py-3 rounded-2xl border-4 border-white bg-sky-700 text-white shadow-xl font-bold">See my work</Link>
-                            <Link to="/contact" className="px-5 py-3 rounded-2xl border-4 border-white bg-sky-700 text-white shadow-xl font-bold">Contact</Link>
+                        </div>
+                    </article>
+                    <article className="border-4 border-white rounded-2xl p-4 shadow-xl transition bg-sky-700">
+                        <div className="mt-8 flex justify-center gap-4">
+                            <Link to="/projects" className="px-5 py-3 rounded-2xl border-4 border-white bg-sky-700 text-white shadow-xl font-bold">See my work</Link>
                         </div>
                     </article>
                 </div>

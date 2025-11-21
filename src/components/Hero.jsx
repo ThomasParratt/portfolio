@@ -23,8 +23,8 @@ export default function Hero() {
                     <img 
                         src={heroImage} 
                         alt="Tom" 
-                        className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-gray-300 shadow-lg cursor-pointer"
-                        onClick={() => navigate("/pong")}
+                        className="w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-gray-300 shadow-lg cursor-pointer"
+                        onClick={() => navigate("/pongFace")}
                     />
                 </div>
                 <div className="mt-8 flex justify-center gap-4">

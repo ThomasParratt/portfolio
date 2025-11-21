@@ -18,7 +18,7 @@ export default function Navbar() {
     return (
         <header className={`fixed w-full z-30 transition-all ${scrolled? 'bg-white/80 backdrop-blur shadow-sm' : 'bg-transparent'}`}>
             <nav className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
-                <div className="text-xl font-semibold">Thomas Parratt</div>
+                <div className="text-xl font-semibold"><Link to="/">Thomas Parratt</Link></div>
                     <ul className="hidden md:flex gap-6 items-center text-sm">
                         <li><Link to="/" className="hover:underline">Home</Link></li>
                         <li><Link to="/projects" className="hover:underline">Projects</Link></li>

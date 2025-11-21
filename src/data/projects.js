@@ -16,4 +16,5 @@ const projects = [
         live: '#'
     }
 ]
+
 export default projects

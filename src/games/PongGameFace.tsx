@@ -384,11 +384,12 @@ export default function PongGameFace() {
 
     function draw() {
         // Clear canvas
-        ctx.fillStyle = 'black';
-        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        //ctx.fillStyle = 'black';
+        //ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
         // Draw player paddles
-        ctx.fillStyle = 'white';
+        ctx.fillStyle = 'black';
         ctx.fillRect(15, player1Y, paddleWidth, paddleHeight);
 
         ctx.fillRect((canvasWidth - paddleWidth) - 15, player2Y, paddleWidth, paddleHeight);
@@ -401,7 +402,7 @@ export default function PongGameFace() {
         if (ballImg.complete) { // only draw if image loaded
             ctx.drawImage(ballImg, ballX, ballY, BALL_SIZE, BALL_SIZE);
         } else {
-            ctx.fillStyle = 'white';
+            ctx.fillStyle = 'black';
             ctx.fillRect(ballX, ballY, BALL_SIZE, BALL_SIZE);
         }
 

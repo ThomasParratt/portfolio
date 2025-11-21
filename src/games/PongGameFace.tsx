@@ -6,7 +6,7 @@ export default function PongGameFace() {
   useEffect(() => {
     const canvas = canvasRef.current!;
     const ctx = canvas.getContext("2d")!;
-    let gameState: 'menu' | 'playing' | 'result' = 'menu'; // Start in menu mode
+    let gameState: 'playing' | 'result' = 'playing'; // Start in playing mode
     let twoPlayerMode = false; // Default is one-player mode
 
     const ballImg = new Image();
@@ -46,7 +46,8 @@ export default function PongGameFace() {
     let player1Y = (canvasHeight - paddleHeight) / 2;
     let player2Y = (canvasHeight - paddleHeight) / 2;
     let ballX = canvasWidth / 2, ballY = canvasHeight / 2;
-    let ballSpeedX = 5, ballSpeedY = 3;
+    let ballSpeedX = INITIAL_BALLSPEED_X * (Math.random() > 0.5 ? 1 : -1);
+    let ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
     let playerNames = ["Player 1", "Player 2"];
     let player1 = playerNames[0];
     let player2 = playerNames[1];
@@ -58,31 +59,12 @@ export default function PongGameFace() {
     const keysPressed: { [key: string]: boolean } = {}; // Object to track key presses
 
     document.addEventListener('keydown', (e) => {
-        if (gameState === 'menu') {
-            if (e.key === '1') {
-                twoPlayerMode = false; // One player mode (AI plays as Player 2)
-                player2 = "AI"; // Set player2 to "AI" explicitly
-                gameState = 'playing';
-                resetGame();
-            } else if (e.key === '2') {
-                twoPlayerMode = true; // Two-player mode
-                player2 = playerNames[Math.floor(Math.random() * 2)];
-                // Ensure player2 is not the same as player1
-                while (player2 === player1) {
-                    player2 = playerNames[Math.floor(Math.random() * 2)];
-                }
-                winner = player1
-                gameState = 'playing';
-                resetGame();
-            }
-        } else {
             if (e.key === 'Escape') {
-                gameState = 'menu'; // Return to the menu screen
+                //gameState = 'menu'; // Return to the menu screen
                 resetGame(); // Reset game variables
             } else {
                 keysPressed[e.key] = true; // Handle normal game input
             }
-        }
     });
 
 
@@ -223,10 +205,10 @@ export default function PongGameFace() {
         const deltaTime = (currentTime - lastTime) / 1000; // seconds
         lastTime = currentTime;
 
-        if (gameState === 'menu') {
+        /*if (gameState === 'menu') {
             drawMenu();
-        } 
-        else if (gameState === 'result') {
+        }*/
+        if (gameState === 'result') {
             drawResult();
         }
         else {
@@ -235,9 +217,6 @@ export default function PongGameFace() {
         }
         requestAnimationFrame(gameLoop);
     }
-
-
-    //START FROM HERE NOW!!
 
     function ballMove(deltaTime: number) {
         ballX += ballSpeedX * deltaTime;
@@ -362,7 +341,7 @@ export default function PongGameFace() {
         ctx.fillText(pong, (canvasWidth * 0.5) - (pongWidth / 2), canvasHeight / 4);
     }
 
-    function drawMenu() {
+    /*function drawMenu() {
         ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
@@ -380,7 +359,7 @@ export default function PongGameFace() {
 
         ctx.fillText(text1, (canvasWidth * 0.5) - (text1Width / 2), canvasHeight / 2);
         ctx.fillText(text2, (canvasWidth * 0.5) - (text2Width / 2), canvasHeight / 2 + 50);
-    }
+    }*/
 
     function draw() {
         // Clear canvas
@@ -430,12 +409,12 @@ export default function PongGameFace() {
 
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen">
       <canvas
         ref={canvasRef}
         width={800}
         height={600}
-        className="border rounded shadow-md bg-white"
+        className="border rounded shadow-md bg-transparent"
       />
     </div>
   );

@@ -9,6 +9,18 @@ export default function PongGameFace() {
     let gameState: 'menu' | 'playing' | 'result' = 'menu'; // Start in menu mode
     let twoPlayerMode = false; // Default is one-player mode
 
+    const ballImg = new Image();
+    ballImg.src = '/me.jpg'; 
+    ballImg.onload = () => {
+        // Only start the game loop once the image is loaded
+        gameLoop(performance.now());
+    };
+    
+    // Optional: handle errors
+    ballImg.onerror = () => {
+        console.error("Failed to load ball image");
+    };
+
     // Game Constants
     const PADDLE_WIDTH = 15; 
     const PADDLE_HEIGHT = 110;
@@ -387,7 +399,12 @@ export default function PongGameFace() {
             ctx.fillRect(canvasWidth / 2, i, 3, canvasHeight / 40);
 
         // Draw ball
-        ctx.fillRect(ballX, ballY, ballSize, ballSize);
+        if (ballImg.complete) { // only draw if image loaded
+            ctx.drawImage(ballImg, ballX, ballY, ballSize, ballSize);
+        } else {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(ballX, ballY, ballSize, ballSize);
+        }
 
         //Draw scores
         ctx.font = "50px 'font-sans', monospace";
@@ -408,7 +425,7 @@ export default function PongGameFace() {
         ctx.fillText(player2Text, (canvasWidth * 0.75) - (player2TextWidth / 2), 70);
     }
 
-    gameLoop(performance.now());
+    //gameLoop(performance.now());
   }, []);
 
 

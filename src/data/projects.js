@@ -5,7 +5,7 @@ const projects = [
         description: 'A simple Pong game written in TypeScript. Can be player alone (vs Computer) or with a friend.',
         tech: ['React', 'TypeScript', 'Node'],
         repo: '#',
-        live: '/pong'
+        live: '/pongFace'
     },
     {
         id: 'p2',

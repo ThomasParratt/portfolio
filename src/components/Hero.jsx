@@ -14,7 +14,7 @@ export default function Hero() {
                 <h1 className="text-4xl md:text-6xl font-bold">
                     Hi, I'm Tom.
                     <span className="block text-lg md:text-xl mt-4 font-medium text-gray-600">
-                        Software engineer & English teacher — I build playful web experiences.
+                        Software developer — building my foundation through meaningful, user-focused projects.
                     </span>
                 </h1>
                 <div className="mt-8 flex justify-center gap-4">

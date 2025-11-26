@@ -3,8 +3,6 @@ import Projects from './Projects'
 import Contact from './Contact'
 import { Routes, Route, Link, useLocation } from "react-router-dom"
 import heroImage from '../assets/me.jpg'
-import LinkedInLogo from '../assets/LinkedIn_logo.png'
-import GitHubLogo from '../assets/GitHub_logo.svg'
 import { useNavigate } from "react-router-dom";
 import PongGameFace from '../games/PongGameFace';
 import { useState, useEffect } from 'react';

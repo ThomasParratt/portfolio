@@ -25,7 +25,7 @@ export default function Hero() {
         <section className="pt-24 pb-12">
             <section className="mt-8">
                 <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <article className="md:col-span-2 border-4 border-white rounded-2xl p-4 shadow-xl transition bg-orange-400 flex flex-col md:flex-row items-center md:items-start gap-6">
+                    <article className="min-h-[400px] md:min-h-[500px] md:col-span-2 border-4 border-white rounded-2xl p-4 shadow-xl transition bg-orange-400 flex flex-col md:flex-row items-center md:items-start gap-6">
                         <div className="flex-1">
                             <h1 className="text-4xl md:text-6xl text-white font-bold">
                                 Hi, I'm Tom.

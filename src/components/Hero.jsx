@@ -3,6 +3,9 @@ import Projects from './Projects'
 import Contact from './Contact'
 import { Routes, Route, Link, useLocation } from "react-router-dom"
 import heroImage from '../assets/me.jpg'
+import linkedinIcon from "../assets/LinkedIn_logo.png";
+import githubIcon from "../assets/GitHub_logo.svg";
+//import emailIcon from "../assets/email.svg";
 import { useNavigate } from "react-router-dom";
 import PongGameFace from '../games/PongGameFace';
 import { useState, useEffect } from 'react';
@@ -50,6 +53,29 @@ export default function Hero() {
                     </article>
                 </div>
             </div>
+            <section className="py-12 text-center">
+                <p className="mb-6 text-xl font-semibold">Let's connect!</p>
+                <div className="flex justify-center gap-6">
+                    <a
+                        href="https://www.linkedin.com/in/thomas-parratt-hive/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="w-12 h-12 opacity-70 hover:opacity-100 transition"
+                    >
+                        <img src={linkedinIcon} alt="LinkedIn" className="w-full h-full" />
+                    </a>
+                    <a
+                        href="https://github.com/ThomasParratt"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        className="w-12 h-12 opacity-70 hover:opacity-100 transition"
+                    >
+                        <img src={githubIcon} alt="GitHub" className="w-full h-full" />
+                    </a>
+                </div>
+            </section>
             {/* Pong overlay */}
             {showPong && (
                 <div className="mt-8 absolute inset-0 flex items-center justify-center z-20 pointer-events-none">

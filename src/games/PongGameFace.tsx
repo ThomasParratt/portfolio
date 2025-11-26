@@ -33,8 +33,8 @@ export default function PongGameFace({ width, height }) {
     const AI_UPDATE_INTERVAL = 1000;
     const INITIAL_BALLSPEED_X = 450;
     const INITIAL_BALLSPEED_Y = 20;
-    const PONG_UP_1 = 'q';
-    const PONG_DOWN_1 = 's';
+    const PONG_UP_1 = 'ArrowUp';
+    const PONG_DOWN_1 = 'ArrowDown';
     const PONG_UP_2 = 'o';
     const PONG_DOWN_2 = 'k';
 
@@ -60,6 +60,11 @@ export default function PongGameFace({ width, height }) {
     const keysPressed: { [key: string]: boolean } = {}; // Object to track key presses
 
     document.addEventListener('keydown', (e) => {
+            // Prevent scrolling for arrow keys
+            if (['ArrowUp', 'ArrowDown'].includes(e.key)) {
+                e.preventDefault();
+            }
+
             if (e.key === 'Escape') {
                 //gameState = 'menu'; // Return to the menu screen
                 resetGame(); // Reset game variables
@@ -331,7 +336,7 @@ export default function PongGameFace({ width, height }) {
         //ctx.fillStyle = 'black';
         //ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.95)'; // 50% transparent white
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; // 50% transparent white
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.fillStyle = 'black';
@@ -408,7 +413,7 @@ export default function PongGameFace({ width, height }) {
 
 
   return (
-    <div className="backdrop-blur-md bg-white/10 rounded shadow-md">
+    <div className="backdrop-blur-sm bg-white/10 rounded shadow-md">
         <canvas
             ref={canvasRef}
             width={width}
@@ -418,5 +423,3 @@ export default function PongGameFace({ width, height }) {
     </div>
   );
 }
-
-<div className="backdrop-blur-md bg-white/10 rounded shadow-md"></div>

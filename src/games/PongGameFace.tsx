@@ -369,7 +369,7 @@ export default function PongGameFace() {
         //ctx.fillStyle = 'black';
         //ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)'; // 50% transparent white
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'; //transparent white
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Draw player paddles
@@ -400,13 +400,13 @@ export default function PongGameFace() {
         //const player1Text = player1 + ": " + player1Score;
         const player1Text = player1Score.toString();
         const player1TextWidth = ctx.measureText(player1Text).width;
-        ctx.fillText(player1Text, (canvasWidth * 0.25) - (player1TextWidth / 2), 70);
+        ctx.fillText(player1Text, (canvasWidth * 0.4) - (player1TextWidth / 2), 70);
 
         // Calculate the width of the text for player 2 and adjust to centre
         //const player2Text = player2 + ": " + player2Score;
         const player2Text = player2Score.toString();
         const player2TextWidth = ctx.measureText(player2Text).width;
-        ctx.fillText(player2Text, (canvasWidth * 0.75) - (player2TextWidth / 2), 70);
+        ctx.fillText(player2Text, (canvasWidth * 0.6) - (player2TextWidth / 2), 70);
     }
 
     //gameLoop(performance.now());
@@ -415,12 +415,14 @@ export default function PongGameFace() {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <canvas
-        ref={canvasRef}
-        width={800}
-        height={600}
-        className="border rounded shadow-md bg-transparent"
-      />
+        <div className="backdrop-blur-md bg-white/10 rounded shadow-md">
+            <canvas
+                ref={canvasRef}
+                width={800}
+                height={600}
+                className="border rounded shadow-md bg-transparent"
+            />
+        </div>
     </div>
   );
 }

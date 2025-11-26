@@ -398,13 +398,13 @@ export default function PongGame() {
         //const player1Text = player1 + ": " + player1Score;
         const player1Text = player1Score.toString();
         const player1TextWidth = ctx.measureText(player1Text).width;
-        ctx.fillText(player1Text, (canvasWidth * 0.25) - (player1TextWidth / 2), 70);
+        ctx.fillText(player1Text, (canvasWidth * 0.4) - (player1TextWidth / 2), 70);
 
         // Calculate the width of the text for player 2 and adjust to centre
         //const player2Text = player2 + ": " + player2Score;
         const player2Text = player2Score.toString();
         const player2TextWidth = ctx.measureText(player2Text).width;
-        ctx.fillText(player2Text, (canvasWidth * 0.75) - (player2TextWidth / 2), 70);
+        ctx.fillText(player2Text, (canvasWidth * 0.6) - (player2TextWidth / 2), 70);
     }
 
     gameLoop(performance.now());

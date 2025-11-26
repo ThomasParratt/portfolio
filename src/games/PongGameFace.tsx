@@ -13,6 +13,7 @@ export default function PongGameFace({ width, height }) {
     ballImg.src = '/me.jpg'; 
     ballImg.onload = () => {
         // Only start the game loop once the image is loaded
+        ballReset(twoPlayerMode, canvasWidth, canvasHeight);
         gameLoop(performance.now());
     };
     
@@ -25,7 +26,7 @@ export default function PongGameFace({ width, height }) {
     const PADDLE_WIDTH = 15; 
     const PADDLE_HEIGHT = 110;
     const PADDLE_SPEED = 500;
-    const BALL_SIZE = 50;
+    const BALL_SIZE = 80;
     const BUFFER = 15;
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;
@@ -271,30 +272,26 @@ export default function PongGameFace({ width, height }) {
         }
     }
 
-    function ballReset(twoPlayerMode, canvasWidth, canvasHeight) {
-        /*if (this.currentRallyLen > this.longestRally)
-            this.longestRally = this.currentRallyLen;
-        this.totalHits += this.currentRallyLen;
-        this.pointsPlayed++;
-        this.currentRallyLen = 0;*/
-        ballX = canvasWidth / 2 - BALL_SIZE / 2 + 1.5;
-        ballY = canvasHeight / 2;
-    
-        // Pause the ball temporarily
+    function ballReset(twoPlayerMode: boolean, canvasWidth: number, canvasHeight: number) {
+        // Perfectly center the ball
+        ballX = (canvasWidth - BALL_SIZE) / 2;
+        ballY = (canvasHeight - BALL_SIZE) / 2;
+
+        // Pause ball temporarily
         ballSpeedX = 0;
         ballSpeedY = 0;
-    
+
         setTimeout(() => {
-        if (twoPlayerMode) {
-            ballSpeedX = INITIAL_BALLSPEED_X * (Math.random() > 0.5 ? 1 : -1);
-            ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
-        }
-        else {
-            ballSpeedX = INITIAL_BALLSPEED_X * -1;
-            ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
-        }
-        }, 1000); // 1000ms = 1 second delay
-  }
+            if (twoPlayerMode) {
+                ballSpeedX = INITIAL_BALLSPEED_X * (Math.random() > 0.5 ? 1 : -1);
+                ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
+            } else {
+                ballSpeedX = INITIAL_BALLSPEED_X * -1;
+                ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
+            }
+        }, 1000); // 1 second delay
+    }
+
 
     function update(deltaTime: number) {
         if (gameState == "playing")
@@ -366,48 +363,45 @@ export default function PongGameFace({ width, height }) {
 
     function draw() {
         // Clear canvas
-        //ctx.fillStyle = 'black';
-        //ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; //transparent white
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; // transparent white overlay
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Draw player paddles
         ctx.fillStyle = 'black';
         ctx.fillRect(15, player1Y, paddleWidth, paddleHeight);
-
         ctx.fillRect((canvasWidth - paddleWidth) - 15, player2Y, paddleWidth, paddleHeight);
 
         // Draw centre line
-        for (let i = 0; i < canvasHeight; i+=canvasHeight/20)
+        for (let i = 0; i < canvasHeight; i += canvasHeight / 20)
             ctx.fillRect(canvasWidth / 2, i, 3, canvasHeight / 40);
 
-        // Draw ball
-        if (ballImg.complete) { // only draw if image loaded
+        // Draw ball as a perfect circle
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(ballX + BALL_SIZE / 2, ballY + BALL_SIZE / 2, BALL_SIZE / 2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+
+        if (ballImg.complete) {
             ctx.drawImage(ballImg, ballX, ballY, BALL_SIZE, BALL_SIZE);
         } else {
             ctx.fillStyle = 'black';
             ctx.fillRect(ballX, ballY, BALL_SIZE, BALL_SIZE);
         }
+        ctx.restore();
 
-        //Draw scores
+        // Draw scores
         ctx.font = "50px 'font-sans', monospace";
-        
-        /* ctx.fillText("" + player1Score, canvasWidth * 0.25, 70);
-        ctx.fillText("" + player2Score, canvasWidth * 0.75, 70); */
-
-        // Calculate the width of the text for player 1 and adjust to centre
-        //const player1Text = player1 + ": " + player1Score;
         const player1Text = player1Score.toString();
         const player1TextWidth = ctx.measureText(player1Text).width;
         ctx.fillText(player1Text, (canvasWidth * 0.4) - (player1TextWidth / 2), 70);
 
-        // Calculate the width of the text for player 2 and adjust to centre
-        //const player2Text = player2 + ": " + player2Score;
         const player2Text = player2Score.toString();
         const player2TextWidth = ctx.measureText(player2Text).width;
         ctx.fillText(player2Text, (canvasWidth * 0.6) - (player2TextWidth / 2), 70);
     }
+
 
     //gameLoop(performance.now());
   }, []);

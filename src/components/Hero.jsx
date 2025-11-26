@@ -38,8 +38,9 @@ export default function Hero() {
                 <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
-                        className="min-h-[400px] md:min-h-[500px] md:col-span-2 border-4 border-white rounded-2xl p-4 shadow-xl transition bg-orange-400 flex flex-col md:flex-row items-center md:items-start gap-6"
+                        className="relative min-h-[550px] md:min-h-[650px] md:col-span-2 border-4 border-white rounded-2xl p-4 shadow-xl transition bg-orange-400 flex flex-col md:flex-row items-start gap-6"
                     >
+                        {/* Text stays in original flow */}
                         <div className="flex-1">
                             <h1 className="text-4xl md:text-6xl text-white font-bold">
                                 Hi, I'm Tom.
@@ -48,14 +49,16 @@ export default function Hero() {
                                 </span>
                             </h1>
                         </div>
-                        <div className="flex-shrink-0">
+
+                        {/* Photo centered absolutely */}
+                        {!showPong && (
                             <img
                                 src={heroImage}
                                 alt="Tom"
-                                className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-2xl shadow-xl cursor-pointer"
+                                className="absolute top-1/2 left-1/2 w-[80px] h-[80px] object-cover rounded-full shadow-xl transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
                                 onClick={handleShowPong}
                             />
-                        </div>
+                        )}
                     </article>
                 </div>
             </section>

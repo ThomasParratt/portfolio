@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function PongGameFace() {
+export default function PongGameFace({ width, height }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -369,7 +369,7 @@ export default function PongGameFace() {
         //ctx.fillStyle = 'black';
         //ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'; //transparent white
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; //transparent white
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Draw player paddles
@@ -414,15 +414,15 @@ export default function PongGameFace() {
 
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-        <div className="backdrop-blur-md bg-white/10 rounded shadow-md">
-            <canvas
-                ref={canvasRef}
-                width={800}
-                height={600}
-                className="border rounded shadow-md bg-transparent"
-            />
-        </div>
+    <div className="backdrop-blur-md bg-white/10 rounded shadow-md">
+        <canvas
+            ref={canvasRef}
+            width={width}
+            height={height}
+            className="border rounded shadow-md bg-transparent w-full h-full"
+        />
     </div>
   );
 }
+
+<div className="backdrop-blur-md bg-white/10 rounded shadow-md"></div>

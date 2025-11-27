@@ -38,16 +38,38 @@ export default function Hero() {
                 <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
-                        className="relative min-h-[550px] md:min-h-[650px] md:col-span-2 border-4 border-white rounded-2xl p-4 shadow-xl transition bg-orange-400 flex flex-col md:flex-row items-start gap-6"
+                        className="relative min-h-[500px] md:min-h-[600px] md:col-span-2 border-4 border-white rounded-2xl p-4 shadow-xl transition bg-orange-400 flex flex-col md:flex-row items-start gap-6"
                     >
                         {/* Text stays in original flow */}
                         <div className="flex-1">
-                            <h1 className="text-4xl md:text-6xl text-white font-bold">
+                            <h1 className="text-5xl md:text-7xl text-white font-bold">
                                 Hi, I'm Tom.
-                                <span className="block text-lg md:text-xl mt-4 font-medium text-white">
-                                    Software developer — building my foundation through meaningful, user-focused projects. - I also add a bit of fun when I can! It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                </span>
                             </h1>
+                            <p className="text-2xl md:text-4xl mt-6 font-medium text-white">
+                                Software developer — building my foundation through meaningful, user-focused projects.
+                            </p>
+                            <p className="mt-6 text-white text-base md:text-lg leading-relaxed">
+                                I’m a software developer actively looking for new opportunities after completing the core curriculum at{" "}
+                                <a
+                                    href="https://www.hive.fi/en/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline underline-offset-2 hover:text-orange-100"
+                                >
+                                    Hive Helsinki
+                                </a>
+                                , an innovative peer-learning environment inspired by the 42 Network. Working in a fully self-directed,
+                                project-based setting taught me to break down complex problems, learn rapidly, collaborate effectively, and
+                                build robust software from the ground up.
+                                <br /><br />
+                                Before transitioning into software development, I worked as an English teacher, delivering lessons to
+                                learners of all ages and professional backgrounds. This experience has shaped my communication skills,
+                                strengthened my ability to explain technical ideas clearly, and taught me how to adapt to different
+                                learning and working styles—skills I will now bring into every development team.
+                                <br /><br />
+                                I’m currently sharpening my full-stack capabilities through the University of Helsinki’s Full Stack Open
+                                course while continuing to build user-focused, meaningful projects that help me grow as a developer.
+                            </p>
                         </div>
 
                         {/* Photo centered absolutely */}

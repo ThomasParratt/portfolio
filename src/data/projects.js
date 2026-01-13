@@ -14,6 +14,14 @@ const projects = [
         tech: ['React', 'Google Maps API'],
         repo: '#',
         live: '#'
+    },
+    {
+        id: 'p3',
+        title: 'Timetable App',
+        description: 'A printable lesson schedule for a language school.',
+        tech: ['React', 'TypeScript', 'Node'],
+        repo: 'https://github.com/ThomasParratt/day_schedule',
+        live: '#'
     }
 ]
 

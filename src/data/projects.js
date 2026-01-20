@@ -9,16 +9,8 @@ const projects = [
     },
     {
         id: 'p2',
-        title: 'Scheduler App',
-        description: 'Calendar-based scheduling for language trainers.',
-        tech: ['React', 'Google Maps API'],
-        repo: '#',
-        live: '#'
-    },
-    {
-        id: 'p3',
         title: 'Timetable App',
-        description: 'A printable lesson schedule for a language school.',
+        description: 'Enables the user to create an A4 printable classroom schedule for Berlitz Helsinki.',
         tech: ['React', 'TypeScript', 'Node'],
         repo: 'https://github.com/ThomasParratt/day_schedule',
         live: '#'

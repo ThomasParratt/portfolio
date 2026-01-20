@@ -22,7 +22,6 @@ export default function Navbar() {
                     <ul className="hidden md:flex gap-6 items-center text-sm">
                         <li><Link to="/" className="hover:underline text-orange-600 text-lg">Home</Link></li>
                         <li><Link to="/projects" className="hover:underline text-orange-600 text-lg">Projects</Link></li>
-                        <li><Link to="/about" className="hover:underline text-orange-600 text-lg">About</Link></li>
                         <li><Link to="/contact" className="hover:underline text-orange-600 text-lg">Contact</Link></li>
                     </ul>
                 <div className="md:hidden">{/* mobile menu? */}</div>

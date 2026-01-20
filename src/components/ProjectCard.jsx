@@ -10,7 +10,9 @@ export default function ProjectCard({p}) {
                 {p.tech.map(t=> <span key={t} className="px-2 py-1 rounded-2xl bg-sky-500">{t}</span>)}
             </div>
             <div className="mt-4 flex gap-2">
-                <Link to={p.live} className="text-sm text-white underline">Live</Link>
+                {p.live && (
+                    <Link to={p.live} className="text-sm text-white underline">Live</Link>
+                )}
                 <a href={p.repo} className="text-sm text-white underline">Code</a>
             </div>
         </article>

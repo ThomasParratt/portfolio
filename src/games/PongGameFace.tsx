@@ -68,7 +68,8 @@ export default function PongGameFace({ width, height }) {
             if (e.key === 'Escape') {
                 //gameState = 'menu'; // Return to the menu screen
                 resetGame(); // Reset game variables
-            } else {
+            } 
+            else {
                 keysPressed[e.key] = true; // Handle normal game input
             }
     });
@@ -87,26 +88,6 @@ export default function PongGameFace({ width, height }) {
         ballReset(twoPlayerMode, canvasWidth, canvasHeight);
         player1Score = 0;
         player2Score = 0;
-
-        /*player1Y = (canvasHeight - paddleHeight) / 2;
-        player2Y = (canvasHeight - paddleHeight) / 2;
-        ballX = canvasWidth / 2 - BALL_SIZE / 2 + 1.5;
-        ballY = canvasHeight / 2;
-        ballSpeedX = 0;
-        ballSpeedY = 0;
-    
-        setTimeout(() => {
-        if (twoPlayerMode) {
-            ballSpeedX = INITIAL_BALLSPEED_X * (Math.random() > 0.5 ? 1 : -1);
-            ballSpeedX = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
-        }
-        else {
-            ballSpeedX = INITIAL_BALLSPEED_X * -1;
-            ballSpeedX = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
-        }
-        }, 1000); // 1000ms = 1 second delay
-        player1Score = 0;
-        player2Score = 0;*/
     }
 
     // Predict where the ball will go along the Y-axis when it reaches the target X (AI's paddle)
@@ -135,27 +116,6 @@ export default function PongGameFace({ width, height }) {
         }
         return ballY; // Return the predicted Y position of the ball
     }
-
-
-    /*function updatePlayerPositions() {
-        // Player 1 movement (W and S keys)
-        if (keysPressed['w']) player1Y -= paddleSpeed;
-        if (keysPressed['s']) player1Y += paddleSpeed;
-
-        if (twoPlayerMode) {
-            // Player 2 movement (ArrowUp and ArrowDown keys)
-            if (keysPressed['ArrowUp']) player2Y -= paddleSpeed;
-            if (keysPressed['ArrowDown']) player2Y += paddleSpeed;
-        } else {
-            // AI movement for Player 2
-            const lerpSpeed = 0.1; // Smooth movement
-            player2Y += (ballY - (player2Y + paddleHeight / 2)) * lerpSpeed;
-        }
-
-        // Ensure paddles stay within bounds
-        player1Y = Math.max(0, Math.min(canvasHeight - paddleHeight, player1Y));
-        player2Y = Math.max(0, Math.min(canvasHeight - paddleHeight, player2Y));
-    }*/
 
     function updatePlayerPositions(deltaTime: number) {
         // Player 1 movement
@@ -197,7 +157,8 @@ export default function PongGameFace({ width, height }) {
 
             if (paddleCenter < aiTargetY - PADDLE_SPEED * deltaTime) {
                 player2Y += PADDLE_SPEED * deltaTime;
-            } else if (paddleCenter > aiTargetY + PADDLE_SPEED * deltaTime) {
+            } 
+            else if (paddleCenter > aiTargetY + PADDLE_SPEED * deltaTime) {
                 player2Y -= PADDLE_SPEED * deltaTime;
             }
         }
@@ -211,9 +172,6 @@ export default function PongGameFace({ width, height }) {
         const deltaTime = (currentTime - lastTime) / 1000; // seconds
         lastTime = currentTime;
 
-        /*if (gameState === 'menu') {
-            drawMenu();
-        }*/
         if (gameState === 'result') {
             drawResult();
         }
@@ -243,7 +201,6 @@ export default function PongGameFace({ width, height }) {
 
         // Player 1 paddle collision
         if (ballX <= PADDLE_WIDTH + BUFFER && ballY + BALL_SIZE >= player1Y && ballY <= player1Y + PADDLE_HEIGHT) {
-            //this.currentRallyLen++;
             const hitPos = (ballY + BALL_SIZE / 2) - (player1Y + PADDLE_HEIGHT / 2); // calculates the difference between the centres of the ball and the paddle
             const normalized = hitPos / (PADDLE_HEIGHT / 2); // -1 (top) to 1 (bottom)
         
@@ -290,7 +247,8 @@ export default function PongGameFace({ width, height }) {
             if (twoPlayerMode) {
                 ballSpeedX = INITIAL_BALLSPEED_X * (Math.random() > 0.5 ? 1 : -1);
                 ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
-            } else {
+            } 
+            else {
                 ballSpeedX = INITIAL_BALLSPEED_X * -1;
                 ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
             }
@@ -312,9 +270,7 @@ export default function PongGameFace({ width, height }) {
                 player2Score++;
                 if (player2Score === WINNING_SCORE) {
                     gameState = 'result';
-                    //this.averageRally = this.ball.totalHits / this.ball.pointsPlayed;
                     winner = player2;
-                    //this.duration = performance.now() - this.startTime;
                 }
                 ballReset(twoPlayerMode, canvasWidth, canvasHeight);
             }
@@ -323,9 +279,7 @@ export default function PongGameFace({ width, height }) {
                 player1Score++;
                 if (player1Score === WINNING_SCORE) {
                     gameState = 'result';
-                    //this.averageRally = this.ball.totalHits / this.ball.pointsPlayed;
                     winner = player1;
-                    //this.duration = performance.now() - this.startTime;
                 }
                 ballReset(twoPlayerMode, canvasWidth, canvasHeight);
             }
@@ -333,8 +287,6 @@ export default function PongGameFace({ width, height }) {
     }
 
     function drawResult() {
-        //ctx.fillStyle = 'black';
-        //ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         ctx.clearRect(0, 0, canvasWidth, canvasHeight);
         ctx.fillStyle = 'rgba(255, 255, 255, 0.1)'; // 50% transparent white
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -345,26 +297,6 @@ export default function PongGameFace({ width, height }) {
         const pongWidth = ctx.measureText(pong).width;
         ctx.fillText(pong, (canvasWidth * 0.5) - (pongWidth / 2), canvasHeight / 4);
     }
-
-    /*function drawMenu() {
-        ctx.fillStyle = 'black';
-        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-
-        ctx.fillStyle = 'white';
-        ctx.font = "100px 'font-sans', monospace";
-        const pong = "PONG";
-        const pongWidth = ctx.measureText(pong).width;
-        ctx.fillText(pong, (canvasWidth * 0.5) - (pongWidth / 2), canvasHeight / 4);
-
-        ctx.font = "30px 'font-sans', monospace"; 
-        const text1 = "vs computer (Press '1')";
-        const text1Width = ctx.measureText(text1).width;
-        const text2 = "vs human (Press '2')";
-        const text2Width = ctx.measureText(text2).width;
-
-        ctx.fillText(text1, (canvasWidth * 0.5) - (text1Width / 2), canvasHeight / 2);
-        ctx.fillText(text2, (canvasWidth * 0.5) - (text2Width / 2), canvasHeight / 2 + 50);
-    }*/
 
     function draw() {
         // Clear canvas
@@ -406,9 +338,6 @@ export default function PongGameFace({ width, height }) {
         const player2TextWidth = ctx.measureText(player2Text).width;
         ctx.fillText(player2Text, (canvasWidth * 0.6) - (player2TextWidth / 2), 70);
     }
-
-
-    //gameLoop(performance.now());
   }, []);
 
 

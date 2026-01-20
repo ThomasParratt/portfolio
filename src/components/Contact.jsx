@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Socials from './Socials'
 
 
 export default function Contact() {
@@ -29,6 +30,7 @@ export default function Contact() {
                     </form>
                 )}
             </div>
+            <Socials />
         </section>
     )
 }

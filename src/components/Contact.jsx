@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-
+import useState from 'react'
 
 export default function Contact() {
     const [email, setEmail] = useState('')

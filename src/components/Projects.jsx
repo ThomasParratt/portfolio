@@ -1,4 +1,3 @@
-import React from 'react'
 import hiveProjects from '../data/hiveProjects'
 import projects from '../data/projects'
 import ProjectCard from './ProjectCard'

@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Projects from './Projects';
-import heroImage from '../assets/me.jpg';
+import me from '../assets/me.jpg';
 import linkedinIcon from "../assets/LinkedIn_logo.png";
 import githubIcon from "../assets/GitHub_logo.svg";
 import PongGameFace from '../games/PongGameFace';
 import { useLocation } from "react-router-dom";
 
-export default function Hero() {
+export default function Home() {
     const [showPong, setShowPong] = useState(false);
     const [boxSize, setBoxSize] = useState({ width: 0, height: 0, top: 0, left: 0 });
     const boxRef = useRef(null);
@@ -75,7 +75,7 @@ export default function Hero() {
                         {/* Photo centered absolutely */}
                         {!showPong && (
                             <img
-                                src={heroImage}
+                                src={me}
                                 alt="Tom"
                                 className="absolute top-1/2 left-1/2 w-[80px] h-[80px] object-cover rounded-full shadow-xl transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
                                 onClick={handleShowPong}

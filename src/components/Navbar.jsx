@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 
 
@@ -25,7 +25,7 @@ export default function Navbar() {
                         <li><Link to="/about" className="hover:underline text-orange-600 text-lg">About</Link></li>
                         <li><Link to="/contact" className="hover:underline text-orange-600 text-lg">Contact</Link></li>
                     </ul>
-                <div className="md:hidden">{/* mobile menu placeholder */}</div>
+                <div className="md:hidden">{/* mobile menu? */}</div>
             </nav>
         </header>
     )

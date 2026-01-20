@@ -12,7 +12,7 @@ const projects = [
         description: 'Enables the user to create an A4 printable classroom schedule for Berlitz Helsinki.',
         tech: ['React', 'TypeScript', 'Node'],
         repo: 'https://github.com/ThomasParratt/day_schedule',
-        live: '#'
+        live: 'https://thomasparratt.github.io/day_schedule/'
     },
     {
         id: 'p3',

@@ -365,9 +365,15 @@ export default function PongGame() {
         const text1Width = ctx.measureText(text1).width;
         const text2 = "vs human (Press '2')";
         const text2Width = ctx.measureText(text2).width;
+        const text3 = "Player 1: Up = 'Q', Down = 'S'";
+        const text3Width = ctx.measureText(text3).width;
+        const text4 = "Player 2: Up = 'O', Down = 'K'";
+        const text4Width = ctx.measureText(text4).width;
 
-        ctx.fillText(text1, (canvasWidth * 0.5) - (text1Width / 2), canvasHeight / 2);
-        ctx.fillText(text2, (canvasWidth * 0.5) - (text2Width / 2), canvasHeight / 2 + 50);
+        ctx.fillText(text1, (canvasWidth * 0.5) - (text1Width / 2), canvasHeight / 2 - 50);
+        ctx.fillText(text2, (canvasWidth * 0.5) - (text2Width / 2), canvasHeight / 2);
+        ctx.fillText(text3, (canvasWidth * 0.5) - (text3Width / 2), canvasHeight / 2 + 100);
+        ctx.fillText(text4, (canvasWidth * 0.5) - (text4Width / 2), canvasHeight / 2 + 150);
     }
 
     function draw() {

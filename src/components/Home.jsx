@@ -46,7 +46,7 @@ export default function Home() {
                                 Hi, I'm Tom.
                             </h1>
                             <p className="text-2xl md:text-4xl mt-6 font-medium text-white">
-                                Software developer — building my foundation through meaningful, user-focused projects.
+                                A software developer building my foundation through meaningful, user-focused projects.
                             </p>
                             <p className="mt-6 text-white text-base md:text-lg leading-relaxed">
                                 I’m a software developer actively looking for new opportunities after completing the core curriculum at{" "}
@@ -62,10 +62,10 @@ export default function Home() {
                                 project-based setting taught me to break down complex problems, learn rapidly, collaborate effectively, and
                                 build robust software from the ground up.
                                 <br /><br />
-                                Before transitioning into software development, I worked as an English teacher, delivering lessons to
+                                I also work as a teacher of English as a second language, delivering lessons to
                                 learners of all ages and professional backgrounds. This experience has shaped my communication skills,
                                 strengthened my ability to explain technical ideas clearly, and taught me how to adapt to different
-                                learning and working styles—skills I will now bring into every development team.
+                                learning and working styles - skills I will now bring into every development team.
                                 <br /><br />
                                 I’m currently sharpening my full-stack capabilities through the University of Helsinki’s Full Stack Open
                                 course while continuing to build user-focused, meaningful projects that help me grow as a developer.

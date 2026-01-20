@@ -35,20 +35,20 @@ export default function Home() {
                 <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
-                        className="relative min-h-[500px] md:min-h-[600px] md:col-span-2 border-4 border-white rounded-2xl p-4 shadow-xl transition bg-orange-400 flex flex-col md:flex-row items-start gap-6"
+                        className="relative min-h-[500px] md:min-h-[600px] md:col-span-2 border-4 border-orange-300 rounded-2xl p-4 shadow-xl transition bg-amber-200 flex flex-col md:flex-row items-start gap-6"
                     >
                         {/* Text stays in original flow */}
                         <div className="flex-1">
-                            <h1 className="text-5xl md:text-7xl text-white font-bold">
+                            <h1 className="text-5xl md:text-7xl text-orange-500 font-bold">
                                 Hi, I'm Tom.
                             </h1>
-                            <p className="text-2xl md:text-4xl mt-6 font-medium text-white max-w-3xl">
+                            <p className="text-2xl md:text-4xl mt-6 font-semibold text-orange-500 max-w-3xl">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
-                            <p className="mt-6 text-white text-base md:text-lg leading-relaxed">
+                            <p className="mt-6 text-orange-500 text-base font-medium md:text-lg leading-relaxed">
                                 I’m a software developer actively looking for new opportunities after completing the core curriculum at{" "}
                                 <a
-                                    href="https://www.hive.fi/en/"
+                                    href="https://www.hive.fi/en/" 
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="underline underline-offset-2 hover:text-orange-100"

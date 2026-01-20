@@ -20,9 +20,9 @@ export default function Navbar() {
             <nav className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
                 <div className="text-xl font-semibold"><Link to="/">Thomas Parratt</Link></div>
                     <ul className="hidden md:flex gap-6 items-center text-sm">
-                        <li><Link to="/" className="hover:underline text-orange-600 text-lg">Home</Link></li>
-                        <li><Link to="/projects" className="hover:underline text-orange-600 text-lg">Projects</Link></li>
-                        <li><Link to="/contact" className="hover:underline text-orange-600 text-lg">Contact</Link></li>
+                        <li><Link to="/" className="hover:underline text-orange-500 text-lg font-semibold">Home</Link></li>
+                        <li><Link to="/projects" className="hover:underline text-orange-500 text-lg font-semibold">Projects</Link></li>
+                        <li><Link to="/contact" className="hover:underline text-orange-500 text-lg font-semibold">Contact</Link></li>
                     </ul>
                 <div className="md:hidden">{/* mobile menu? */}</div>
             </nav>

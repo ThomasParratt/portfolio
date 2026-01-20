@@ -1,4 +1,5 @@
-import useState from 'react'
+import { useState } from 'react'
+
 
 export default function Contact() {
     const [email, setEmail] = useState('')
@@ -19,7 +20,7 @@ export default function Contact() {
             <div className="max-w-2xl mx-auto px-6">
                 <h2 className="text-2xl font-bold">Contact</h2>
                 {sent ? (
-                    <div className="mt-4 text-green-600">Thanks — I will get back to you soon.</div>
+                    <div className="mt-4 text-green-600">Thanks. I will get back to you soon.</div>
                 ) : (
                     <form className="mt-4 flex flex-col gap-3" onSubmit={onSubmit}>
                         <input required value={email} onChange={e=>setEmail(e.target.value)} placeholder="Your email" className="px-4 py-2 border rounded" />

@@ -45,7 +45,7 @@ export default function Home() {
                             <p className="text-2xl md:text-4xl mt-6 font-semibold text-orange-500 max-w-3xl">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
-                            <p className="mt-6 text-orange-500 text-base font-medium md:text-lg leading-relaxed">
+                            <p className="mt-6 text-orange-500 text-base font-medium md:text-xl leading-relaxed">
                                 I’m a software developer actively looking for new opportunities after completing the core curriculum at{" "}
                                 <a
                                     href="https://www.hive.fi/en/" 

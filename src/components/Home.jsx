@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
 import Projects from './Projects'
-import Socials from './Socials'
 import me from '../assets/me.jpg'
 import PongGameFace from '../games/PongGameFace'
 import { useLocation } from "react-router-dom"
@@ -85,8 +84,6 @@ export default function Home() {
             </section>
 
             <Projects />
-
-            <Socials />
             
             {/* Pong overlay */}
             {showPong && boxSize.width > 0 && (

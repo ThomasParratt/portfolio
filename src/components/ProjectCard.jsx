@@ -13,7 +13,9 @@ export default function ProjectCard({p}) {
                 {p.live && (
                     <Link to={p.live} className="text-sm text-white underline">Live</Link>
                 )}
-                <a href={p.repo} className="text-sm text-white underline">Code</a>
+                {p.repo && (
+                    <a href={p.repo} className="text-sm text-white underline">Repo</a>
+                )}
             </div>
         </article>
     )

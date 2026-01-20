@@ -14,6 +14,13 @@ const projects = [
         tech: ['React', 'TypeScript', 'Node'],
         repo: 'https://github.com/ThomasParratt/day_schedule',
         live: '#'
+    },
+    {
+        id: 'p3',
+        title: 'Wordle',
+        description: 'A version of my favourite word game written in C++. Play in the terminal. Just clone, compile, execute and play!',
+        tech: ['C++'],
+        repo: 'https://github.com/ThomasParratt/word_game'
     }
 ]
 

@@ -3,6 +3,7 @@ import Projects from './Projects'
 import me from '../assets/me.jpg'
 import PongGameFace from '../games/PongGameFace'
 import { useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export default function Home() {
     const [showPong, setShowPong] = useState(false);
@@ -66,6 +67,31 @@ export default function Home() {
                                 <br /><br />
                                 I’m currently sharpening my full-stack capabilities through the University of Helsinki’s Full Stack Open
                                 course while continuing to build user-focused, meaningful projects that help me grow as a developer.
+                                <br /><br />
+                                Take a look at my{" "} 
+                                <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300">projects</Link> 
+                                {" "}and{" "} 
+                                <Link to="/contact" className="underline underline-offset-2 hover:text-orange-300">contact</Link>
+                                {" "}me if you have any enquiries, questions, feedback, or just want a chat.
+                                We can also connect on{" "}
+                                <a
+                                    href="https://www.linkedin.com/in/thomas-parratt-hive/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline underline-offset-2 hover:text-orange-300"
+                                >
+                                    LinkedIn
+                                </a> 
+                                {" "}or{" "} 
+                                <a
+                                    href="https://github.com/ThomasParratt"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline underline-offset-2 hover:text-orange-300"
+                                >
+                                    GitHub
+                                </a>
+                                .
                             </p>
                         </div>
 

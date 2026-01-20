@@ -17,7 +17,6 @@ export default function Home() {
         setShowPong(false);
     }, [location]);
 
-    // Handle click on the hero image
     const handleShowPong = () => {
         if (boxRef.current) {
             const rect = boxRef.current.getBoundingClientRect();
@@ -33,7 +32,7 @@ export default function Home() {
 
     return (
         <section className="pt-24 pb-12 relative">
-            {/* Hero Box */}
+            {/* Box */}
             <section className="mt-8">
                 <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
@@ -45,7 +44,7 @@ export default function Home() {
                             <h1 className="text-5xl md:text-7xl text-white font-bold">
                                 Hi, I'm Tom.
                             </h1>
-                            <p className="text-2xl md:text-4xl mt-6 font-medium text-white">
+                            <p className="text-2xl md:text-4xl mt-6 font-medium text-white max-w-3xl">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
                             <p className="mt-6 text-white text-base md:text-lg leading-relaxed">
@@ -72,12 +71,13 @@ export default function Home() {
                             </p>
                         </div>
 
-                        {/* Photo centered absolutely */}
+                        {/* Photo */}
                         {!showPong && (
                             <img
                                 src={me}
                                 alt="Tom"
-                                className="absolute top-1/2 left-1/2 w-[80px] h-[80px] object-cover rounded-full shadow-xl transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                                className="absolute top-4 right-4 w-[180px] h-[180px] object-cover rounded-full shadow-xl cursor-pointer"
+
                                 onClick={handleShowPong}
                             />
                         )}
@@ -85,7 +85,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Projects */}
             <Projects />
 
             {/* Contact / Social Links */}

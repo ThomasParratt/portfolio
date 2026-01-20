@@ -35,7 +35,7 @@ export default function Home() {
                 <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
-                        className="relative min-h-[500px] md:min-h-[600px] md:col-span-2 border-4 border-orange-300 rounded-2xl p-4 shadow-xl transition bg-amber-200 flex flex-col md:flex-row items-start gap-6"
+                        className="relative min-h-[500px] md:min-h-[600px] md:col-span-2 border-2 border-orange-500 rounded-2xl p-4 shadow-xl transition bg-amber-100 flex flex-col md:flex-row items-start gap-6"
                     >
                         {/* Text stays in original flow */}
                         <div className="flex-1">
@@ -51,7 +51,7 @@ export default function Home() {
                                     href="https://www.hive.fi/en/" 
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="underline underline-offset-2 hover:text-orange-100"
+                                    className="underline underline-offset-2 hover:text-orange-300"
                                 >
                                     Hive Helsinki
                                 </a>

@@ -4,6 +4,8 @@ import me from '../assets/me.jpg'
 import PongGameFace from '../games/PongGameFace'
 import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
+import linkedinIcon from "../assets/LinkedIn_logo.png"
+import githubIcon from "../assets/GitHub_logo.svg"
 
 export default function Home() {
     const [showPong, setShowPong] = useState(false);
@@ -31,48 +33,27 @@ export default function Home() {
 
     return (
         <section className="pt-12 pb-12 relative">
-            {/* Box */}
             <section className="mt-8">
-                <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
-                        className="relative min-h-[500px] md:min-h-[600px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100 flex flex-col md:flex-row items-start gap-6"
+                        className="relative min-h-[500px] md:min-h-[400px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100 flex flex-col md:flex-row items-start gap-6"
                     >
-                        {/* Text stays in original flow */}
                         <div className="flex-1">
                             <h1 className="text-5xl md:text-7xl text-orange-600 font-semibold">
                                 Hi, I'm Tom.
                             </h1>
-                            <p className="text-2xl md:text-4xl mt-6 font-medium text-orange-600 max-w-3xl">
+                            <p className="text-2xl md:text-4xl mt-6 font-medium text-orange-600 max-w-2xl">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
-                            <p className="mt-6 text-orange-600 text-base font-normal md:text-xl leading-relaxed">
-                                I’m a software developer actively looking for new opportunities after completing the core curriculum at{" "}
-                                <a
-                                    href="https://www.hive.fi/en/" 
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="underline underline-offset-2 hover:text-orange-300"
-                                >
-                                    Hive Helsinki
-                                </a>
-                                , an innovative peer-learning environment inspired by the 42 Network. Working in a fully self-directed,
-                                project-based setting taught me to break down complex problems, learn rapidly, collaborate effectively, and
-                                build robust software from the ground up.
-                                <br /><br />
-                                I also work as a teacher of English as a second language, delivering lessons to
-                                learners of all ages and professional backgrounds. This experience has shaped my communication skills,
-                                strengthened my ability to explain technical ideas clearly, and taught me how to adapt to different
-                                learning and working styles - skills I will now bring into every development team.
-                                <br /><br />
-                                I’m currently sharpening my full-stack capabilities through the University of Helsinki’s Full Stack Open
-                                course while continuing to build user-focused, meaningful projects that help me grow as a developer.
-                                <br /><br />
+                            <p className="mt-6 text-orange-600 text-base font-medium md:text-xl leading-relaxed">
                                 Take a look at my{" "} 
                                 <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300">projects</Link> 
                                 {" "}and{" "} 
                                 <Link to="/contact" className="underline underline-offset-2 hover:text-orange-300">contact</Link>
                                 {" "}me if you have any enquiries, questions, feedback, or just want a chat.
+                            </p>
+                            <p className="mt-6 text-orange-600 text-base font-medium md:text-xl leading-relaxed">
                                 We can also connect on{" "}
                                 <a
                                     href="https://www.linkedin.com/in/thomas-parratt-hive/"
@@ -93,8 +74,27 @@ export default function Home() {
                                 </a>
                                 .
                             </p>
+                            <div className="mt-8 mb-4 flex justify-center gap-6">
+                                <a
+                                    href="https://www.linkedin.com/in/thomas-parratt-hive/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
+                                    className="w-16 h-16"
+                                    >
+                                    <img src={linkedinIcon} alt="LinkedIn" className="w-full h-full" />
+                                </a>
+                                <a
+                                    href="https://github.com/ThomasParratt"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub"
+                                    className="w-16 h-16"
+                                    >
+                                    <img src={githubIcon} alt="GitHub" className="w-full h-full" />
+                                </a>
+                            </div>
                         </div>
-
                         {/* Photo */}
                         {!showPong && (
                             <img

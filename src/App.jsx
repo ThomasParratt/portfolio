@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Projects from './components/Projects'
+import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import PongGame from "./games/PongGame";
@@ -15,6 +16,7 @@ export default function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pong" element={<PongGame />} />

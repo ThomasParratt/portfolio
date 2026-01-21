@@ -24,14 +24,14 @@ export default function PongGameFace({ width, height }) {
 
     // Game Constants
     const PADDLE_WIDTH = 10; 
-    const PADDLE_HEIGHT = 80;
+    const PADDLE_HEIGHT = 120;
     const PADDLE_SPEED = 500;
-    const BALL_SIZE = 160;
+    const BALL_SIZE = 100;
     const BUFFER = 15;
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;
     const AI_UPDATE_INTERVAL = 1000;
-    const INITIAL_BALLSPEED_X = 450;
+    const INITIAL_BALLSPEED_X = 600;
     const INITIAL_BALLSPEED_Y = 20;
     const PONG_UP_1 = 'ArrowUp';
     const PONG_DOWN_1 = 'ArrowDown';
@@ -217,7 +217,6 @@ export default function PongGameFace({ width, height }) {
 
         // Player 2 paddle collision
         if (ballX + BALL_SIZE >= canvasWidth - PADDLE_WIDTH - BUFFER && ballY + BALL_SIZE >= player2Y && ballY <= player2Y + PADDLE_HEIGHT) {
-            //this.currentRallyLen++;
             const hitPos = (ballY + BALL_SIZE / 2) - (player2Y + PADDLE_HEIGHT / 2);
             const normalized = hitPos / (PADDLE_HEIGHT / 2);
         
@@ -274,7 +273,7 @@ export default function PongGameFace({ width, height }) {
                 ballReset(twoPlayerMode, canvasWidth, canvasHeight);
             }
 
-            if (ballX > canvasWidth) {
+            if (ballX + BALL_SIZE > canvasWidth) {
                 player1Score++;
                 if (player1Score === WINNING_SCORE) {
                     gameState = 'result';
@@ -324,7 +323,7 @@ export default function PongGameFace({ width, height }) {
         const drawHeight = BALL_SIZE / aspectRatio;
 
         if (ballImg.complete) {
-            ctx.drawImage(ballImg, ballX, ballY - 27, drawWidth, drawHeight);
+            ctx.drawImage(ballImg, ballX, ballY - 17, drawWidth, drawHeight);
         } else {
             ctx.fillStyle = 'black';
             ctx.fillRect(ballX, ballY, BALL_SIZE, BALL_SIZE);

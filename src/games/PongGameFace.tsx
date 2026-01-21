@@ -26,7 +26,7 @@ export default function PongGameFace({ width, height }) {
     const PADDLE_WIDTH = 10; 
     const PADDLE_HEIGHT = 80;
     const PADDLE_SPEED = 500;
-    const BALL_SIZE = 260;
+    const BALL_SIZE = 160;
     const BUFFER = 15;
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;
@@ -319,8 +319,12 @@ export default function PongGameFace({ width, height }) {
         ctx.closePath();
         ctx.clip();
 
+        const aspectRatio = ballImg.width / ballImg.height;
+        const drawWidth = BALL_SIZE;
+        const drawHeight = BALL_SIZE / aspectRatio;
+
         if (ballImg.complete) {
-            ctx.drawImage(ballImg, ballX, ballY, BALL_SIZE, BALL_SIZE);
+            ctx.drawImage(ballImg, ballX, ballY - 27, drawWidth, drawHeight);
         } else {
             ctx.fillStyle = 'black';
             ctx.fillRect(ballX, ballY, BALL_SIZE, BALL_SIZE);

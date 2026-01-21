@@ -100,7 +100,8 @@ export default function Home() {
                             <img
                                 src={me}
                                 alt="Tom"
-                                className="absolute top-4 right-4 w-[260px] h-[260px] object-cover rounded-full shadow-xl cursor-pointer"
+                                className="absolute top-1/2 left-1/2 w-[160px] h-[160px] object-cover rounded-full shadow-xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
+
 
                                 onClick={handleShowPong}
                             />

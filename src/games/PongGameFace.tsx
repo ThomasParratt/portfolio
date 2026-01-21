@@ -26,7 +26,7 @@ export default function PongGameFace({ width, height }) {
     const PADDLE_WIDTH = 10; 
     const PADDLE_HEIGHT = 80;
     const PADDLE_SPEED = 500;
-    const BALL_SIZE = 50;
+    const BALL_SIZE = 260;
     const BUFFER = 15;
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;

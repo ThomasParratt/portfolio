@@ -23,10 +23,10 @@ export default function PongGameFace({ width, height }) {
     };
 
     // Game Constants
-    const PADDLE_WIDTH = 15; 
-    const PADDLE_HEIGHT = 110;
+    const PADDLE_WIDTH = 10; 
+    const PADDLE_HEIGHT = 80;
     const PADDLE_SPEED = 500;
-    const BALL_SIZE = 80;
+    const BALL_SIZE = 50;
     const BUFFER = 15;
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;
@@ -41,11 +41,10 @@ export default function PongGameFace({ width, height }) {
     let lastTime = performance.now();
     let aiLastUpdateTime: number = 0;
     let aiTargetY = (canvas.height - PADDLE_HEIGHT) / 2; // AI's current target
-    const paddleWidth = 10, paddleHeight = 100;
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
-    let player1Y = (canvasHeight - paddleHeight) / 2;
-    let player2Y = (canvasHeight - paddleHeight) / 2;
+    let player1Y = (canvasHeight - PADDLE_HEIGHT) / 2;
+    let player2Y = (canvasHeight - PADDLE_HEIGHT) / 2;
     let ballX = canvasWidth / 2, ballY = canvasHeight / 2;
     let ballSpeedX = INITIAL_BALLSPEED_X * (Math.random() > 0.5 ? 1 : -1);
     let ballSpeedY = INITIAL_BALLSPEED_Y * (Math.random() > 0.5 ? 1 : -1);
@@ -306,8 +305,8 @@ export default function PongGameFace({ width, height }) {
 
         // Draw player paddles
         ctx.fillStyle = 'black';
-        ctx.fillRect(15, player1Y, paddleWidth, paddleHeight);
-        ctx.fillRect((canvasWidth - paddleWidth) - 15, player2Y, paddleWidth, paddleHeight);
+        ctx.fillRect(15, player1Y, PADDLE_WIDTH, PADDLE_HEIGHT);
+        ctx.fillRect((canvasWidth - PADDLE_WIDTH) - 15, player2Y, PADDLE_WIDTH, PADDLE_HEIGHT);
 
         // Draw centre line
         for (let i = 0; i < canvasHeight; i += canvasHeight / 20)

@@ -43,7 +43,7 @@ export default function Home() {
                             <h1 className="text-5xl md:text-7xl text-orange-600 font-semibold">
                                 Hi, I'm Tom.
                             </h1>
-                            <p className="text-2xl md:text-4xl mt-6 font-medium text-orange-600 max-w-lg">
+                            <p className="text-2xl md:text-4xl mt-6 font-medium text-orange-600 max-w-md">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
                             <p className="mt-6 text-orange-600 text-base font-medium md:text-xl leading-relaxed">

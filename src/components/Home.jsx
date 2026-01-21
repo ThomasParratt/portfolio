@@ -37,7 +37,7 @@ export default function Home() {
                 <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
-                        className="relative min-h-[500px] md:min-h-[400px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100"
+                        className="relative min-h-[500px] md:min-h-[500px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100"
                     >
                         <div className="grid grid-cols-2 grid-rows-2 gap-6 h-full">
                             {/* Top left */}
@@ -46,12 +46,7 @@ export default function Home() {
                             </h1>
 
                             {/* Top right */}
-                            <p className="text-2xl md:text-4xl font-medium text-orange-600 max-w-md self-start justify-self-end">
-                                A software developer building my foundation through meaningful, user-focused projects.
-                            </p>
-
-                            {/* Bottom left */}
-                            <p className="text-orange-600 text-base font-medium md:text-xl leading-relaxed self-end">
+                            <p className="text-orange-600 text-base font-medium md:text-xl leading-relaxed text-right">
                                 Take a look at my{" "} 
                                 <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300">projects</Link> 
                                 {" "}and{" "} 
@@ -59,9 +54,14 @@ export default function Home() {
                                 {" "}me if you have any enquiries, questions, feedback, or just want a chat.
                             </p>
 
+                            {/* Bottom left */}
+                            <p className="text-2xl md:text-3xl font-medium text-orange-600 max-w-md self-end justify-self-end">
+                                A software developer building my foundation through meaningful, user-focused projects.
+                            </p>
+
                             {/* Bottom right */}
                             <div className="self-end justify-self-end">
-                                <p className="text-orange-600 text-base font-medium md:text-xl leading-relaxed mb-4">
+                                <p className="text-orange-600 text-base font-medium md:text-xl leading-relaxed mb-4 text-right">
                                     We can also connect on{" "}
                                     <a
                                         href="https://www.linkedin.com/in/thomas-parratt-hive/"
@@ -82,7 +82,7 @@ export default function Home() {
                                     </a>.
                                 </p>
 
-                                <div className="flex gap-6">
+                                <div className="flex gap-6 justify-end">
                                     <a
                                         href="https://www.linkedin.com/in/thomas-parratt-hive/"
                                         target="_blank"
@@ -110,7 +110,7 @@ export default function Home() {
                             <img
                                 src={me}
                                 alt="Tom"
-                                className="absolute top-1/2 left-1/2 w-[100px] h-[100px] object-cover rounded-full shadow-xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
+                                className="absolute top-1/2 left-1/2 w-[200px] h-[200px] object-cover rounded-full shadow-xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
                                 onClick={handleShowPong}
                             />
                         )}

@@ -24,9 +24,9 @@ export default function PongGameFace({ width, height }) {
 
     // Game Constants
     const PADDLE_WIDTH = 10; 
-    const PADDLE_HEIGHT = 120;
+    const PADDLE_HEIGHT = 160;
     const PADDLE_SPEED = 500;
-    const BALL_SIZE = 100;
+    const BALL_SIZE = 200;
     const BUFFER = 15;
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;
@@ -323,7 +323,7 @@ export default function PongGameFace({ width, height }) {
         const drawHeight = BALL_SIZE / aspectRatio;
 
         if (ballImg.complete) {
-            ctx.drawImage(ballImg, ballX, ballY - 17, drawWidth, drawHeight);
+            ctx.drawImage(ballImg, ballX, ballY - 33, drawWidth, drawHeight);
         } else {
             ctx.fillStyle = 'black';
             ctx.fillRect(ballX, ballY, BALL_SIZE, BALL_SIZE);

@@ -110,7 +110,7 @@ export default function Home() {
                             <img
                                 src={me}
                                 alt="Tom"
-                                className="absolute top-1/2 left-1/2 w-[200px] h-[200px] object-cover rounded-full shadow-xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
+                                className="absolute top-1/2 left-1/2 w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] object-cover rounded-full shadow-xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
                                 onClick={handleShowPong}
                             />
                         )}

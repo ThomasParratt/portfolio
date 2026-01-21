@@ -43,7 +43,7 @@ export default function Home() {
                             <h1 className="text-5xl md:text-7xl text-orange-600 font-semibold">
                                 Hi, I'm Tom.
                             </h1>
-                            <p className="text-2xl md:text-4xl mt-6 font-medium text-orange-600 max-w-2xl">
+                            <p className="text-2xl md:text-4xl mt-6 font-medium text-orange-600 max-w-lg">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
                             <p className="mt-6 text-orange-600 text-base font-medium md:text-xl leading-relaxed">
@@ -100,7 +100,7 @@ export default function Home() {
                             <img
                                 src={me}
                                 alt="Tom"
-                                className="absolute top-4 right-4 w-[180px] h-[180px] object-cover rounded-full shadow-xl cursor-pointer"
+                                className="absolute top-4 right-4 w-[260px] h-[260px] object-cover rounded-full shadow-xl cursor-pointer"
 
                                 onClick={handleShowPong}
                             />

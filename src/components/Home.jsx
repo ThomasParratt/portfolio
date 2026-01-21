@@ -37,76 +37,85 @@ export default function Home() {
                 <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
-                        className="relative min-h-[500px] md:min-h-[400px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100 flex flex-col md:flex-row items-start gap-6"
+                        className="relative min-h-[500px] md:min-h-[400px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100"
                     >
-                        <div className="flex-1">
-                            <h1 className="text-5xl md:text-7xl text-orange-600 font-semibold">
+                        <div className="grid grid-cols-2 grid-rows-2 gap-6 h-full">
+                            {/* Top left */}
+                            <h1 className="text-5xl md:text-7xl text-orange-600 font-semibold self-start max-w-sm">
                                 Hi, I'm Tom.
                             </h1>
-                            <p className="text-2xl md:text-4xl mt-6 font-medium text-orange-600 max-w-md">
+
+                            {/* Top right */}
+                            <p className="text-2xl md:text-4xl font-medium text-orange-600 max-w-md self-start justify-self-end">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
-                            <p className="mt-6 text-orange-600 text-base font-medium md:text-xl leading-relaxed">
+
+                            {/* Bottom left */}
+                            <p className="text-orange-600 text-base font-medium md:text-xl leading-relaxed self-end">
                                 Take a look at my{" "} 
                                 <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300">projects</Link> 
                                 {" "}and{" "} 
                                 <Link to="/contact" className="underline underline-offset-2 hover:text-orange-300">contact</Link>
                                 {" "}me if you have any enquiries, questions, feedback, or just want a chat.
                             </p>
-                            <p className="mt-6 text-orange-600 text-base font-medium md:text-xl leading-relaxed">
-                                We can also connect on{" "}
-                                <a
-                                    href="https://www.linkedin.com/in/thomas-parratt-hive/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="underline underline-offset-2 hover:text-orange-300"
-                                >
-                                    LinkedIn
-                                </a> 
-                                {" "}or{" "} 
-                                <a
-                                    href="https://github.com/ThomasParratt"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="underline underline-offset-2 hover:text-orange-300"
-                                >
-                                    GitHub
-                                </a>
-                                .
-                            </p>
-                            <div className="mt-8 mb-4 flex justify-center gap-6">
-                                <a
-                                    href="https://www.linkedin.com/in/thomas-parratt-hive/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="LinkedIn"
-                                    className="w-16 h-16"
+
+                            {/* Bottom right */}
+                            <div className="self-end justify-self-end">
+                                <p className="text-orange-600 text-base font-medium md:text-xl leading-relaxed mb-4">
+                                    We can also connect on{" "}
+                                    <a
+                                        href="https://www.linkedin.com/in/thomas-parratt-hive/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="underline underline-offset-2 hover:text-orange-300"
                                     >
-                                    <img src={linkedinIcon} alt="LinkedIn" className="w-full h-full" />
-                                </a>
-                                <a
-                                    href="https://github.com/ThomasParratt"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="GitHub"
-                                    className="w-16 h-16"
+                                        LinkedIn
+                                    </a>{" "}
+                                    or{" "}
+                                    <a
+                                        href="https://github.com/ThomasParratt"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="underline underline-offset-2 hover:text-orange-300"
                                     >
-                                    <img src={githubIcon} alt="GitHub" className="w-full h-full" />
-                                </a>
+                                        GitHub
+                                    </a>.
+                                </p>
+
+                                <div className="flex gap-6">
+                                    <a
+                                        href="https://www.linkedin.com/in/thomas-parratt-hive/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="LinkedIn"
+                                        className="w-16 h-16"
+                                    >
+                                        <img src={linkedinIcon} alt="LinkedIn" className="w-full h-full" />
+                                    </a>
+                                    <a
+                                        href="https://github.com/ThomasParratt"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="GitHub"
+                                        className="w-16 h-16"
+                                    >
+                                        <img src={githubIcon} alt="GitHub" className="w-full h-full" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
+
                         {/* Photo */}
                         {!showPong && (
                             <img
                                 src={me}
                                 alt="Tom"
                                 className="absolute top-1/2 left-1/2 w-[100px] h-[100px] object-cover rounded-full shadow-xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
-
-
                                 onClick={handleShowPong}
                             />
                         )}
                     </article>
+
                 </div>
             </section>
 

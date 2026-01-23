@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom"
 
 export default function About() {
     return (
         <section className="pt-12 pb-12 relative">
             <section className="mt-8">
-                <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <h2 className="text-2xl font-extrabold">ABOUT ME</h2>
                     <article
                         className="relative min-h-[500px] md:min-h-[600px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100 flex flex-col md:flex-row items-start gap-6"
                     >

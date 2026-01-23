@@ -41,12 +41,12 @@ export default function Home() {
                     >
                         <div className="grid grid-cols-2 grid-rows-2 gap-6 h-full">
                             {/* Top left */}
-                            <h1 className="text-5xl md:text-7xl text-orange-600 font-semibold self-start max-w-sm">
+                            <h1 className="text-5xl md:text-8xl text-orange-600 font-semibold self-start max-w-sm">
                                 Hi, I'm Tom.
                             </h1>
 
                             {/* Top right */}
-                            <p className="text-orange-600 text-base font-medium md:text-xl leading-relaxed text-right">
+                            <p className="text-orange-600 text-base font-medium md:text-3xl leading-relaxed text-right">
                                 Take a look at my{" "} 
                                 <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300">projects</Link> 
                                 {" "}and{" "} 
@@ -55,14 +55,14 @@ export default function Home() {
                             </p>
 
                             {/* Bottom left */}
-                            <p className="text-2xl md:text-3xl font-medium text-orange-600 max-w-md self-end justify-self-end">
+                            <p className="text-2xl md:text-4xl font-medium text-orange-600 max-w-md self-end justify-self-end">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
 
                             {/* Bottom right */}
                             <div className="self-end justify-self-end">
-                                <p className="text-orange-600 text-base font-medium md:text-xl leading-relaxed mb-4 text-right">
-                                    We can also connect on{" "}
+                                <p className="text-orange-600 text-base font-medium md:text-2xl leading-relaxed mb-4 text-right">
+                                    Connect on{" "}
                                     <a
                                         href="https://www.linkedin.com/in/thomas-parratt-hive/"
                                         target="_blank"
@@ -115,7 +115,6 @@ export default function Home() {
                             />
                         )}
                     </article>
-
                 </div>
             </section>
 

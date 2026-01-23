@@ -24,7 +24,7 @@ const hiveProjects = [
         id: 'p4',
         title: 'ft_transcendence',
         description: 'The final project at Hive. A full-stack web application that allows users to play two games. Features include user authentication, friend management, real-time multiplayer gaming, and tournament functionality.',
-        tech: ['TypeScript', 'React', 'Tailwind', 'Node.js', 'SQLite'],
+        tech: ['TypeScript', 'React', 'Tailwind CSS', 'Node.js', 'SQLite'],
         repo: 'https://github.com/ThomasParratt/ft_transcendence'
     }
 ]

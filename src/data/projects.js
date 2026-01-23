@@ -17,14 +17,14 @@ const projects = [
     {
         id: 'p3',
         title: 'Wordle',
-        description: 'A version of my favourite word game written in C++. Play in the terminal. Just clone, compile, execute and play!',
+        description: 'A CLI version of my favourite word game written in C++. Just clone, compile, execute and play! GUI version coming soon.',
         tech: ['C++'],
         repo: 'https://github.com/ThomasParratt/word_game'
     },
     {
         id: 'p4',
         title: 'Portfolio',
-        description: 'Check out the code for this site',
+        description: 'Check out the code for this site.',
         tech: ['React', 'JavaScript', 'TypeScript', 'Tailwind CSS'],
         repo: 'https://github.com/ThomasParratt/portfolio'
     }

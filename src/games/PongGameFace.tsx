@@ -24,9 +24,9 @@ export default function PongGameFace({ width, height }) {
 
     // Game Constants
     const PADDLE_WIDTH = 10; 
-    const PADDLE_HEIGHT = 160;
+    const PADDLE_HEIGHT = 100;
     const PADDLE_SPEED = 500;
-    const BALL_SIZE = 200;
+    const BALL_SIZE = 80;
     const BUFFER = 15;
     const MAX_BALL_SPEED = 1500;
     const WINNING_SCORE = 5;
@@ -264,7 +264,7 @@ export default function PongGameFace({ width, height }) {
             checkCollisions(player1Y, player2Y, canvasHeight, canvasWidth);
 
             // Reset ball if missed and count score
-            if (ballX < 0) {
+            if (ballX + BALL_SIZE < 0) {
                 player2Score++;
                 if (player2Score === WINNING_SCORE) {
                     gameState = 'result';
@@ -273,7 +273,7 @@ export default function PongGameFace({ width, height }) {
                 ballReset(twoPlayerMode, canvasWidth, canvasHeight);
             }
 
-            if (ballX + BALL_SIZE > canvasWidth) {
+            if (ballX + BALL_SIZE / 2 > canvasWidth) {
                 player1Score++;
                 if (player1Score === WINNING_SCORE) {
                     gameState = 'result';
@@ -323,7 +323,7 @@ export default function PongGameFace({ width, height }) {
         const drawHeight = BALL_SIZE / aspectRatio;
 
         if (ballImg.complete) {
-            ctx.drawImage(ballImg, ballX, ballY - 33, drawWidth, drawHeight);
+            ctx.drawImage(ballImg, ballX, ballY - 12, drawWidth, drawHeight);
         } else {
             ctx.fillStyle = 'black';
             ctx.fillRect(ballX, ballY, BALL_SIZE, BALL_SIZE);

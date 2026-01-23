@@ -19,6 +19,7 @@ export default function Home() {
     }, [location]);
 
     const handleShowPong = () => {
+        if (window.innerWidth < 768) return;
         if (boxRef.current) {
             const rect = boxRef.current.getBoundingClientRect();
             setBoxSize({

@@ -10,7 +10,7 @@ const projects = [
         id: 'p2',
         title: 'Timetable App',
         description: 'Enables the user to create an A4 printable classroom schedule for Berlitz Helsinki.',
-        tech: ['React', 'TypeScript', 'Node'],
+        tech: ['React', 'JavaScript', 'Node'],
         repo: 'https://github.com/ThomasParratt/day_schedule',
         live: 'https://thomasparratt.github.io/day_schedule/'
     },
@@ -20,6 +20,13 @@ const projects = [
         description: 'A version of my favourite word game written in C++. Play in the terminal. Just clone, compile, execute and play!',
         tech: ['C++'],
         repo: 'https://github.com/ThomasParratt/word_game'
+    },
+    {
+        id: 'p4',
+        title: 'Portfolio',
+        description: 'Check out the code for this site',
+        tech: ['React', 'JavaScript', 'TypeScript', 'Tailwind CSS'],
+        repo: 'https://github.com/ThomasParratt/portfolio'
     }
 ]
 

@@ -9,7 +9,7 @@ export default function About() {
                         className="relative min-h-[500px] md:min-h-[600px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100 flex flex-col md:flex-row items-start gap-6"
                     >
                         <div className="flex-1">
-                            <p className="mt-6 text-orange-600 text-base font-normal md:text-xl leading-relaxed">
+                            <p className="mt-6 text-orange-600 text-base font-medium md:text-xl leading-relaxed">
                                 I’m a software developer actively looking for new opportunities after completing the core curriculum at{" "}
                                 <a
                                     href="https://www.hive.fi/en/" 

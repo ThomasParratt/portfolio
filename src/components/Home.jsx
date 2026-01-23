@@ -55,7 +55,7 @@ export default function Home() {
                             </p>
 
                             {/* Bottom left */}
-                            <p className="text-2xl md:text-4xl font-medium text-orange-600 max-w-md self-end justify-self-end">
+                            <p className="text-1xl md:text-4xl font-medium text-orange-600 max-w-md self-end justify-self-end">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
 

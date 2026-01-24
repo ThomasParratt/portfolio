@@ -13,6 +13,14 @@ export default function Home() {
     const boxRef = useRef(null);
     const location = useLocation();
 
+    useEffect(() => {
+        fetch('http://localhost:5000/api/visit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pageUrl: window.location.pathname }),
+        })
+    }, [])
+
     // Hide Pong overlay when route changes
     useEffect(() => {
         setShowPong(false);
@@ -112,7 +120,13 @@ export default function Home() {
                                 src={me}
                                 alt="Tom"
                                 className="absolute top-1/2 left-1/2 w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] object-cover rounded-full shadow-xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
-                                onClick={handleShowPong}
+                                onClick={() => {
+                                    navigator.sendBeacon(
+                                        'http://localhost:5000/api/click',
+                                        JSON.stringify({ linkUrl: 'profile-image' })
+                                    )
+                                    handleShowPong()
+                                }}
                             />
                         )}
                     </article>

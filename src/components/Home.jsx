@@ -13,14 +13,6 @@ export default function Home() {
     const boxRef = useRef(null);
     const location = useLocation();
 
-    useEffect(() => {
-        fetch('https://contact-backend-rom5.onrender.com/api/visit', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ pageUrl: window.location.pathname }),
-        })
-    }, [])
-
     // Hide Pong overlay when route changes
     useEffect(() => {
         setShowPong(false);
@@ -120,13 +112,7 @@ export default function Home() {
                                 src={me}
                                 alt="Tom"
                                 className="absolute top-1/2 left-1/2 w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] object-cover rounded-full shadow-xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
-                                onClick={() => {
-                                    navigator.sendBeacon(
-                                        'https://contact-backend-rom5.onrender.com/api/click',
-                                        JSON.stringify({ linkUrl: 'profile-image' })
-                                    )
-                                    handleShowPong()
-                                }}
+                                onClick={handleShowPong}
                             />
                         )}
                     </article>

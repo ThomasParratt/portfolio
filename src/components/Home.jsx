@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
 import linkedinIcon from "../assets/LinkedIn_logo.png"
 import githubIcon from "../assets/GitHub_logo.svg"
+import emailIcon from "../assets/email.svg"
 
 export default function Home() {
     const [showPong, setShowPong] = useState(false);
@@ -66,27 +67,6 @@ export default function Home() {
 
                             {/* Bottom right */}
                             <div className="self-end justify-self-end">
-                                <p className="text-orange-600 text-base font-medium md:text-2xl leading-relaxed mb-4 text-right">
-                                    Connect on{" "}
-                                    <a
-                                        href="https://www.linkedin.com/in/thomas-parratt-hive/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="underline underline-offset-2 hover:text-orange-300"
-                                    >
-                                        LinkedIn
-                                    </a>{" "}
-                                    or{" "}
-                                    <a
-                                        href="https://github.com/ThomasParratt"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="underline underline-offset-2 hover:text-orange-300"
-                                    >
-                                        GitHub
-                                    </a>.
-                                </p>
-
                                 <div className="flex gap-6 justify-end">
                                     <a
                                         href="https://www.linkedin.com/in/thomas-parratt-hive/"
@@ -105,6 +85,12 @@ export default function Home() {
                                         className="w-16 h-16"
                                     >
                                         <img src={githubIcon} alt="GitHub" className="w-full h-full" />
+                                    </a>
+                                    <a 
+                                        href="mailto:thomasparratt@googlemail.com" 
+                                        className="w-16 h-16"
+                                    >
+                                        <img src={emailIcon} alt="Email" className="w-full h-full" />
                                     </a>
                                 </div>
                             </div>

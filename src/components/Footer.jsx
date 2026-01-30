@@ -1,5 +1,6 @@
 import linkedinIcon from "../assets/LinkedIn_logo.png"
 import githubIcon from "../assets/GitHub_logo.svg"
+import emailIcon from "../assets/email.svg"
 
 export default function Footer() {
   return (
@@ -23,6 +24,12 @@ export default function Footer() {
             className="w-12 h-12"
             >
             <img src={githubIcon} alt="GitHub" className="w-full h-full" />
+          </a>
+          <a 
+            href="mailto:thomasparratt@googlemail.com" 
+            className="w-12 h-12"
+            >
+            <img src={emailIcon} alt="Email" className="w-full h-full" />
           </a>
         </div>
       <div className="max-w-5xl mx-auto px-6 text-center text-sm text-gray-600">

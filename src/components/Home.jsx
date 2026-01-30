@@ -51,8 +51,12 @@ export default function Home() {
                                 Take a look at my{" "} 
                                 <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300">projects</Link> 
                                 {" "}and{" "} 
-                                <Link to="/contact" className="underline underline-offset-2 hover:text-orange-300">contact</Link>
-                                {" "}me if you have any enquiries, questions, feedback, or just want a chat.
+                                <a 
+                                    href="mailto:thomasparratt@googlemail.com" 
+                                    className="underline underline-offset-2 hover:text-orange-300"
+                                >
+                                    contact
+                                </a>{" "}me if you have any enquiries, questions, feedback, or just want a chat.
                             </p>
 
                             {/* Bottom left */}

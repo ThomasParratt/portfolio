@@ -46,7 +46,7 @@ export default function Home() {
                             <h1 className="text-5xl md:text-8xl text-orange-600 font-semibold max-w-sm">
                                 Hi, I'm Tom.
                             </h1>
-                            <p className="text-orange-600 text-base font-medium md:text-4xl leading-relaxed text-right">
+                            <p className="text-orange-600 text-base text-2xl font-semibold md:text-4xl leading-relaxed text-right">
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
                         </div>
@@ -54,7 +54,7 @@ export default function Home() {
                         {/* Bottom section */}
                         <div className="mt-auto w-full flex flex-col md:flex-row justify-between items-end gap-4">
                             {/* Bottom left text */}
-                            <p className="text-1xl md:text-2xl font-medium text-orange-600 max-w-full">
+                            <p className="text-1xl md:text-2xl font-medium text-orange-600 max-w-full leading-relaxed">
                                 Take a look at my{" "}
                                 <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300">projects</Link>{" "}
                                 and{" "}

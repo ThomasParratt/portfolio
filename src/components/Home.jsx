@@ -20,13 +20,6 @@ export default function Home() {
 
     const handleShowPong = () => {
         if (window.innerWidth < 768) return;
-
-        fetch('http://localhost:5000/api/link-click', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ linkName: 'Pongface' }),
-        })
-
         if (boxRef.current) {
             const rect = boxRef.current.getBoundingClientRect();
             setBoxSize({

@@ -4,8 +4,6 @@ import { BrowserRouter } from "react-router-dom"
 import './index.css'
 import App from './App.jsx'
 
-fetch('http://localhost:5000/api/visit', { method: 'POST' })
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>

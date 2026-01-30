@@ -25,7 +25,6 @@ export default function Navbar() {
                     <li><Link to="/" className="hover:underline text-orange-600 text-lg font-semibold">Home</Link></li>
                     <li><Link to="/about" className="hover:underline text-orange-600 text-lg font-semibold">About</Link></li>
                     <li><Link to="/projects" className="hover:underline text-orange-600 text-lg font-semibold">Projects</Link></li>
-                    <li><Link to="/contact" className="hover:underline text-orange-600 text-lg font-semibold">Contact</Link></li>
                 </ul>
 
                 {/* Mobile menu button */}

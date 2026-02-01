@@ -20,7 +20,7 @@ export default function Home() {
     }, [location]);
 
     const handleShowPong = () => {
-        if (window.innerWidth < 768) return;
+        if (window.innerWidth < 1024) return;
         if (boxRef.current) {
             const rect = boxRef.current.getBoundingClientRect();
             setBoxSize({
@@ -59,7 +59,7 @@ export default function Home() {
                                     w-[100px] h-[100px] sm:w-[180px] sm:h-[180px]
                                     object-cover rounded-full shadow-xl cursor-pointer
                                     mx-auto mb-6
-                                    sm:absolute sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2
+                                    lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2
                                 "
                                 onClick={handleShowPong}
                             />

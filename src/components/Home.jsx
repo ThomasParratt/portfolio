@@ -50,7 +50,20 @@ export default function Home() {
                                 A software developer building my foundation through meaningful, user-focused projects.
                             </p>
                         </div>
-
+                        {/* Photo */}
+                        {!showPong && (
+                            <img
+                                src={me}
+                                alt="Tom"
+                                className="
+                                    w-[100px] h-[100px] sm:w-[180px] sm:h-[180px]
+                                    object-cover rounded-full shadow-xl cursor-pointer
+                                    mx-auto mb-6
+                                    sm:absolute sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2
+                                "
+                                onClick={handleShowPong}
+                            />
+                        )}
                         {/* Bottom section */}
                         <div className="mt-auto w-full flex flex-col md:flex-row justify-between items-end gap-4">
                             {/* Bottom left text */}
@@ -76,16 +89,6 @@ export default function Home() {
                                 </a>
                             </div>
                         </div>
-
-                        {/* Photo */}
-                        {!showPong && (
-                            <img
-                                src={me}
-                                alt="Tom"
-                                className="absolute top-1/2 left-1/2 w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] object-cover rounded-full shadow-xl cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
-                                onClick={handleShowPong}
-                            />
-                        )}
                     </article>
 
                 </div>

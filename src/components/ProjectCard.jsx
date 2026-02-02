@@ -2,8 +2,9 @@ import { Link } from "react-router-dom"
 
 
 export default function ProjectCard({p}) {
+    const visibilityClass = p.liveInternal ? "hidden lg:block" : "";
     return (
-        <article className="border-4 border-white rounded-2xl p-4 shadow-xl transition bg-sky-700">
+        <article className={`border-4 border-white rounded-2xl p-4 shadow-xl transition bg-sky-700 ${visibilityClass}`}>
             <h3 className="font-semibold text-xl text-white">{p.title}</h3>
             <p className="text-sm text-white mt-2">{p.description}</p>
             <div className="mt-3 flex flex-wrap gap-2 text-sm text-white">

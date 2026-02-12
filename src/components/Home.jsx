@@ -56,9 +56,9 @@ export default function Home() {
                                 src={me}
                                 alt="Tom"
                                 className="
-                                    w-[100px] h-[100px] sm:w-[180px] sm:h-[180px]
+                                    w-[180px] h-[180px]
                                     object-cover rounded-full shadow-xl cursor-pointer
-                                    mx-auto mb-6
+                                    mx-auto mb-6 mt-6
                                     lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2
                                 "
                                 onClick={handleShowPong}

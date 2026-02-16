@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import Jacob from './components/Jacob'
 import Projects from './components/Projects'
 import About from './components/About'
 import Footer from './components/Footer'
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/pong" element={<PongGame />} />
           <Route path="/pongFace" element={<PongGameFace />} />
+          <Route path="/jacob" element={<Jacob />} />
         </Routes>
       </main>
       <Footer />

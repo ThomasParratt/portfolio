@@ -68,9 +68,9 @@ export default function Home() {
                             {/* Bottom left text */}
                             <p className="text-1xl md:text-2xl font-medium text-orange-600 max-w-full leading-relaxed">
                                 Take a look at my{" "}
-                                <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300">projects</Link>{" "}
+                                <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300" onClick={(e) => e.stopPropagation()}>projects</Link>{" "}
                                 and{" "}
-                                <a href="mailto:thomasparratt@googlemail.com" className="underline underline-offset-2 hover:text-orange-300">
+                                <a href="mailto:thomasparratt@googlemail.com" className="underline underline-offset-2 hover:text-orange-300" onClick={(e) => e.stopPropagation()}>
                                     contact
                                 </a>{" "}me if you have any enquiries, questions, feedback, or just want a chat.
                             </p>

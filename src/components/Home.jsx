@@ -39,7 +39,7 @@ export default function Home() {
                 <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
-                        className="relative min-h-[500px] md:min-h-[500px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-6 shadow-xl transition bg-amber-100 flex flex-col"
+                        className="relative min-h-[500px] md:min-h-[500px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-6 shadow-xl transition bg-amber-100 flex flex-col cursor-pointer" onClick={handleShowPong}
                     >
                         {/* Top content */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -57,11 +57,10 @@ export default function Home() {
                                 alt="Tom"
                                 className="
                                     w-[180px] h-[180px]
-                                    object-cover rounded-full shadow-xl cursor-pointer
+                                    object-cover rounded-full shadow-xl
                                     mx-auto mb-6 mt-6
                                     lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2
                                 "
-                                onClick={handleShowPong}
                             />
                         )}
                         {/* Bottom section */}

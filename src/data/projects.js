@@ -16,13 +16,21 @@ const projects = [
     },
     {
         id: 'p3',
-        title: 'Wordle',
-        description: 'A CLI version of my favourite word game written in C++. Just clone, compile, execute and play! GUI version coming soon.',
+        title: 'CLI Word Guesser',
+        description: 'A CLI version of Wordle written in C++. Just clone, compile, execute and play! GUI version coming soon.',
         tech: ['C++'],
         repo: 'https://github.com/ThomasParratt/word_game'
     },
     {
         id: 'p4',
+        title: 'React Word Guesser',
+        description: 'My version of Wordle written in React and Tailwind CSS.',
+        tech: ['React', 'JavaScript', 'Tailwind CSS'],
+        repo: 'https://github.com/ThomasParratt/portfolio',
+        live: 'https://word-guesser-iota.vercel.app/'
+    },
+    {
+        id: 'p5',
         title: 'Portfolio',
         description: 'Check out the code for this site.',
         tech: ['React', 'JavaScript', 'TypeScript', 'Tailwind CSS'],

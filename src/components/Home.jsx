@@ -76,7 +76,7 @@ export default function Home() {
                             </p>
 
                             {/* Bottom right icons */}
-                            <div className="flex gap-6">
+                            <div className="flex gap-6" onClick={(e) => e.stopPropagation()}>
                                 <a href="https://www.linkedin.com/in/thomas-parratt-hive/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-16 h-16">
                                     <img src={linkedinIcon} alt="LinkedIn" className="w-full h-full" />
                                 </a>

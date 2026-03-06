@@ -25,7 +25,7 @@ export default function Navbar() {
                     <li><Link to="/" className="hover:underline text-orange-600 text-lg font-semibold">Home</Link></li>
                     <li><Link to="/about" className="hover:underline text-orange-600 text-lg font-semibold">About</Link></li>
                     <li><Link to="/projects" className="hover:underline text-orange-600 text-lg font-semibold">Projects</Link></li>
-                    <li><Link to="/jacob" className="hover:underline text-orange-600 text-lg font-semibold">Jacob's stuff</Link></li>
+                    {/*<li><Link to="/jacob" className="hover:underline text-orange-600 text-lg font-semibold">Jacob's stuff</Link></li>*/}
                 </ul>
 
                 {/* Mobile menu button */}
@@ -52,7 +52,7 @@ export default function Navbar() {
                         <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
                         <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
                         <li><Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link></li>
-                        <li><Link to="/jacob" onClick={() => setMenuOpen(false)}>Jacob's stuff</Link></li>
+                        {/*<li><Link to="/jacob" onClick={() => setMenuOpen(false)}>Jacob's stuff</Link></li>*/}
                     </ul>
                 </div>
             )}

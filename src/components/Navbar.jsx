@@ -32,13 +32,15 @@ export default function Navbar() {
                 <div className="md:hidden">
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
-                        className="focus:outline-none"
+                        className="flex items-center focus:outline-none"
                         aria-label="Toggle menu"
                     >
                         {/* Hamburger icon */}
-                        <div className="w-6 h-0.5 bg-orange-600 mb-1 transition-transform" style={{ transform: menuOpen ? 'rotate(45deg) translateY(6px)' : 'rotate(0)' }} />
-                        <div className="w-6 h-0.5 bg-orange-600 mb-1 transition-opacity" style={{ opacity: menuOpen ? 0 : 1 }} />
-                        <div className="w-6 h-0.5 bg-orange-600 transition-transform" style={{ transform: menuOpen ? 'rotate(-45deg) translateY(-6px)' : 'rotate(0)' }} />
+                        <div className="flex flex-col justify-center gap-1.5 w-6 h-5">
+                            <div className="w-6 h-0.5 bg-orange-600 transition-all origin-center" style={{ transform: menuOpen ? 'translateY(8px) rotate(45deg)' : 'none' }} />
+                            <div className="w-6 h-0.5 bg-orange-600 transition-all" style={{ opacity: menuOpen ? 0 : 1 }} />
+                            <div className="w-6 h-0.5 bg-orange-600 transition-all" style={{ transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }} />
+                        </div>
                     </button>
                 </div>
             </nav>

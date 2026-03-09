@@ -17,7 +17,7 @@ const projects = [
     {
         id: 'p3',
         title: 'CLI Word Guesser',
-        description: 'A CLI version of Wordle written in C++. Just clone, compile, execute and play! GUI version coming soon.',
+        description: 'A CLI version of Wordle written in C++. Just clone, compile, execute and play!',
         tech: ['C++'],
         repo: 'https://github.com/ThomasParratt/word_game'
     },

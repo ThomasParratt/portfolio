@@ -1,13 +1,20 @@
 const projects = [
     {
         id: 'p1',
+        title: 'School Management System',
+        description: 'A school system centred on one instructor and student/class management. Currently in development.',
+        tech: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'JWT', 'bcrypt', 'Docker'],
+        repo: 'https://github.com/ThomasParratt/school-system'
+    },
+    {
+        id: 'p2',
         title: 'Pong!',
         description: 'My version of the classic Pong game written in TypeScript. Can be played alone (vs Computer) or with a friend.',
         tech: ['React', 'TypeScript', 'Node'],
         liveInternal: '/pong'
     },
     {
-        id: 'p2',
+        id: 'p3',
         title: 'Timetable App',
         description: 'Enables the user to create an A4 printable classroom schedule for Berlitz Helsinki.',
         tech: ['React', 'JavaScript', 'Node'],
@@ -15,14 +22,14 @@ const projects = [
         live: 'https://day-schedule.vercel.app/'
     },
     {
-        id: 'p3',
+        id: 'p4',
         title: 'CLI Word Guesser',
         description: 'A CLI version of Wordle written in C++. Just clone, compile, execute and play!',
         tech: ['C++'],
         repo: 'https://github.com/ThomasParratt/word_game'
     },
     {
-        id: 'p4',
+        id: 'p5',
         title: 'React Word Guesser',
         description: 'My version of Wordle written in React and Tailwind CSS.',
         tech: ['React', 'JavaScript', 'Tailwind CSS'],
@@ -30,7 +37,7 @@ const projects = [
         live: 'https://word-guesser-iota.vercel.app/'
     },
     {
-        id: 'p5',
+        id: 'p6',
         title: 'Portfolio',
         description: 'Check out the code for this site.',
         tech: ['React', 'JavaScript', 'TypeScript', 'Tailwind CSS'],

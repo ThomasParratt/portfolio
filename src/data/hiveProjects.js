@@ -3,6 +3,7 @@ const hiveProjects = [
         id: 'p1',
         title: 'Minishell',
         description: 'A Bash-like Unix shell. Replicates basic shell functionalities including command parsing, execution with pipes and redirections, built-in commands, environment variable management, and signal handling.',
+        detailed: 'Minishell is a simplified implementation of a Unix shell written in C. It replicates basic shell functionalities including command parsing, execution with pipes and redirections, built-in commands, environment variable management, and signal handling. This project was developed as part of the 42 school curriculum to deepen understanding of process control, system calls, and memory management in C.', 
         tech: ['C', 'Makefile'],
         repo: 'https://github.com/ThomasParratt/minishell'
     },

@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Jacob from './components/Jacob'
 import Projects from './components/Projects'
+import ProjectDetails from './components/ProjectDetails'
 import About from './components/About'
 import Footer from './components/Footer'
 import PongGame from "./games/PongGame";
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:collection/:id" element={<ProjectDetails />} />
           <Route path="/pong" element={<PongGame />} />
           <Route path="/pongFace" element={<PongGameFace />} />
           <Route path="/jacob" element={<Jacob />} />

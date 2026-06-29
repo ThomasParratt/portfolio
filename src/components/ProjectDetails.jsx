@@ -25,9 +25,8 @@ export default function ProjectDetails() {
                 >
                     <div className="text-orange-600">
                         <h2 className="text-2xl font-extrabold">{p.title}</h2>
-                        <p className="mt-6 font-medium md:text-xl leading-relaxed">
-                            {p.detailed}
-                        </p>
+                        <p className="mt-6 font-medium md:text-xl leading-relaxed">{p.para1}</p>
+                        <p className="mt-6 font-medium md:text-xl leading-relaxed">{p.para2}</p>
                     </div>
                 </article>
             </div>

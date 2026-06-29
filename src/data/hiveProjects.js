@@ -2,8 +2,9 @@ const hiveProjects = [
     {
         id: 'p1',
         title: 'Minishell',
-        description: 'A Bash-like Unix shell. Replicates basic shell functionalities including command parsing, execution with pipes and redirections, built-in commands, environment variable management, and signal handling.',
-        detailed: 'Minishell is a simplified implementation of a Unix shell written in C. It replicates basic shell functionalities including command parsing, execution with pipes and redirections, built-in commands, environment variable management, and signal handling. This project was developed as part of the 42 school curriculum to deepen understanding of process control, system calls, and memory management in C.', 
+        description: 'A C-based Unix shell project that implements command parsing, pipes, redirections, heredocs, environment expansion, built-in commands, and signal handling.',
+        para1: 'Minishell is a from-scratch implementation of a simplified Unix shell written in C. It recreates the core behavior of a real shell, including interactive command input with history, parsing and tokenizing user commands, executing binaries through the system PATH, and managing pipes and redirections. It also supports heredocs, quoted strings, environment-variable expansion, and the $? exit status, while handling built-in commands such as cd, echo, pwd, export, unset, env, and exit. Beyond the visible shell behavior, the project required careful low-level systems work: process management, file descriptor handling, signal control, memory management, and terminal behavior through readline and termios. Minishell was built as part of the 42 curriculum and was a strong exercise in understanding how an operating system executes commands, routes input and output, and coordinates child processes.', 
+        para2: 'Beyond the visible shell behavior, the project required careful low-level systems work: process management, file descriptor handling, signal control, memory management, and terminal behavior through readline and termios. Minishell was built as part of the 42 curriculum and was a strong exercise in understanding how an operating system executes commands, routes input and output, and coordinates child processes.',
         tech: ['C', 'Makefile'],
         repo: 'https://github.com/ThomasParratt/minishell'
     },

@@ -8,11 +8,11 @@ export default function Projects() {
         <section id="projects" className="py-8">
             <div className="max-w-4xl mx-auto px-6">
                 <h2 className="mt-8 text-2xl font-extrabold">SELECTED HIVE PROJECTS</h2>
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                     {hiveProjects.map(p=> <ProjectCard key={p.id} p={p} />)}
                 </div>
                 <h2 className="mt-8 text-2xl font-extrabold">OTHER SELECTED PROJECTS</h2>
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
                     {projects.map(p=> <ProjectCard key={p.id} p={p} />)}
                 </div>
             </div>

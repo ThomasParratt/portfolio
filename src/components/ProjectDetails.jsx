@@ -24,7 +24,8 @@ export default function ProjectDetails() {
                     className="relative min-h-[500px] md:min-h-[400px] border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100"
                 >
                     <div className="text-orange-600">
-                        <h2 className="text-2xl font-extrabold">{p.title}</h2>
+                        <h1 className="text-4xl font-bold">{p.title}</h1>
+                        <video className="mt-6" src={p.video} controls></video>
                         <p className="mt-6 font-medium md:text-xl leading-relaxed">{p.para1}</p>
                         <p className="mt-6 font-medium md:text-xl leading-relaxed">{p.para2}</p>
                     </div>

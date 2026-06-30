@@ -1,7 +1,10 @@
+import minishell from "../assets/Minishell.mp4"
+
 const hiveProjects = [
     {
         id: 'p1',
         title: 'Minishell',
+        video: minishell,
         description: 'A C-based Unix shell project that implements command parsing, pipes, redirections, heredocs, environment expansion, built-in commands, and signal handling.',
         para1: 'Minishell is a from-scratch implementation of a simplified Unix shell written in C. It recreates the core behavior of a real shell, including interactive command input with history, parsing and tokenizing user commands, executing binaries through the system PATH, and managing pipes and redirections. It also supports heredocs, quoted strings, environment-variable expansion, and the $? exit status, while handling built-in commands such as cd, echo, pwd, export, unset, env, and exit. Beyond the visible shell behavior, the project required careful low-level systems work: process management, file descriptor handling, signal control, memory management, and terminal behavior through readline and termios. Minishell was built as part of the 42 curriculum and was a strong exercise in understanding how an operating system executes commands, routes input and output, and coordinates child processes.', 
         para2: 'Beyond the visible shell behavior, the project required careful low-level systems work: process management, file descriptor handling, signal control, memory management, and terminal behavior through readline and termios. Minishell was built as part of the 42 curriculum and was a strong exercise in understanding how an operating system executes commands, routes input and output, and coordinates child processes.',

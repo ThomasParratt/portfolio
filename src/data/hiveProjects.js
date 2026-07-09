@@ -1,4 +1,5 @@
 import minishell from "../assets/Minishell.mp4"
+import cub3d from "../assets/cub3d.gif"
 
 const hiveProjects = [
     {
@@ -14,6 +15,7 @@ const hiveProjects = [
     {
         id: 'p2',
         title: 'cub3D',
+        image: cub3d,
         description: 'A raycasting engine written in C that recreates a Wolfenstein-style 3D view from a 2D map, with textured walls, player movement, collision detection, and a toggleable minimap.',
         para1: 'Cube3D was a pair project where we built a small 3D game engine in C using the MLX42 graphics library. The goal was to render a first-person view from a 2D .cub map by casting rays into the scene, detecting wall intersections, and drawing textured wall slices based on the direction the player is facing. The project includes map parsing and validation, texture loading, floor and ceiling colors, movement controls, collision handling, and a minimap that can be shown or hidden during play.\n\nWorking on this project enabled us to discover how classic 3D rendering works under the hood and how a relatively small codebase can still contain a full rendering pipeline, from file parsing all the way to real-time interaction.',
         para2: 'I learned how raycasting transforms 2D map data into a convincing 3D perspective using trigonometry, angles, and distance calculations. I also learned how to manage texture mapping so that wall surfaces stay visually consistent from different viewing angles, and how to structure validation logic to reject malformed maps before the game starts. Because this was a pair project, I also strengthened my teamwork skills by dividing responsibilities, coordinating implementation details, and keeping the codebase consistent across parsing, rendering, and player movement systems.',

@@ -26,6 +26,7 @@ export default function ProjectDetails() {
                     <div className="text-orange-600">
                         <h1 className="text-4xl font-bold">{p.title}</h1>
                         {p.video && <video className="mt-6" src={p.video} controls autoPlay muted loop playsInline></video>}
+                        {p.image && <img className="mt-6" src={p.image} controls autoPlay muted loop playsInline></img>}
                         <h2 className="mt-8 text-3xl font-bold">Overview</h2>
                         <p className="mt-4 font-medium md:text-xl leading-relaxed whitespace-pre-line">{p.para1}</p>
                         <h2 className="mt-8 text-3xl font-bold">What I learned</h2>

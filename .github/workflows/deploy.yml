@@ -1,0 +1,47 @@
+name: Deploy To Home Server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Copy Project Files To Server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "."
+          target: ${{ secrets.DEPLOY_PATH }}
+          rm: true
+          strip_components: 0
+
+      - name: Rebuild And Restart Container
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -eu
+            cd "${{ secrets.DEPLOY_PATH }}"
+
+            if docker compose version >/dev/null 2>&1; then
+              docker compose up -d --build --remove-orphans
+            elif command -v docker-compose >/dev/null 2>&1; then
+              docker-compose up -d --build --remove-orphans
+            else
+              echo "Neither 'docker compose' nor 'docker-compose' is installed on the server."
+              exit 1
+            fi
+
+            docker image prune -f

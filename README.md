@@ -21,6 +21,7 @@ A personal portfolio site built with React, Vite, Tailwind CSS, and React Router
 ## Docker Deployment Over SSH (Auto Redeploy On Push)
 
 This repo includes a GitHub Actions workflow that redeploys the site to my home server whenever I push to `main`.
+The workflow is configured to run on a `self-hosted` runner so it can reliably reach my home network over SSH.
 
 ### 1) One-time setup on my server
 

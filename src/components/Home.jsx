@@ -43,7 +43,7 @@ export default function Home() {
                     >
                         {/* Top content */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <h1 className="text-5xl md:text-8xl text-orange-600 font-semibold max-w-sm">
+                            <h1 className="text-5xl md:text-8xl text-orange-600 font-bold max-w-sm">
                                 Hi, I'm Tom.
                             </h1>
                             <p className="text-orange-600 text-base text-xl font-semibold md:text-4xl leading-relaxed sm:text-right">
@@ -56,7 +56,7 @@ export default function Home() {
                                 src={me}
                                 alt="Tom"
                                 className="
-                                    w-[180px] h-[180px]
+                                    w-[200px] h-[200px]
                                     object-cover rounded-full shadow-xl
                                     mx-auto mb-6 mt-6
                                     lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2
@@ -66,7 +66,7 @@ export default function Home() {
                         {/* Bottom section */}
                         <div className="mt-auto w-full flex flex-col md:flex-row justify-between items-end gap-4">
                             {/* Bottom left text */}
-                            <p className="text-1xl md:text-2xl font-medium text-orange-600 max-w-full leading-relaxed">
+                            <p className="text-1xl md:text-2xl font-semibold text-orange-600 max-w-full leading-relaxed">
                                 Take a look at my{" "}
                                 <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300" onClick={(e) => e.stopPropagation()}>projects</Link>{" "}
                                 and{" "}

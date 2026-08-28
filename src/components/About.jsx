@@ -8,7 +8,7 @@ export default function About() {
                     className="relative min-h-[500px] md:min-h-[400px] border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100"
                 >
                     <div>
-                        <p className="text-orange-600 font-medium md:text-xl leading-relaxed">
+                        <p className="text-orange-600 font-semibold md:text-xl leading-relaxed">
                             I’m a software developer actively looking for new opportunities after completing the core curriculum at{" "}
                             <a
                                 href="https://www.hive.fi/en/" 

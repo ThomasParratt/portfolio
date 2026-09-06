@@ -29,7 +29,7 @@ export default function ProjectDetails() {
                         {p.image && <img className="mt-6" src={p.image} controls autoPlay muted loop playsInline></img>}
                         <h2 className="mt-8 text-3xl font-bold">Overview</h2>
                         <p className="mt-4 font-medium md:text-xl leading-relaxed whitespace-pre-line">{p.para1}</p>
-                        <h2 className="mt-8 text-3xl font-bold">What I learned</h2>
+                        <h2 className="mt-8 text-3xl font-bold">Engineering choices and key outcomes</h2>
                         <p className="mt-4 font-medium md:text-xl leading-relaxed whitespace-pre-line">{p.para2}</p>
                     </div>
                 </article>

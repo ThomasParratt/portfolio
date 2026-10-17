@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom"
-import hiveProjects from "../data/hiveProjects"
-import projects from "../data/projects"
+import fullstack from "../data/fullstack"
+import frontend from "../data/frontend"
+import systems from '../data/systems'
 
 export default function ProjectDetails() {
     const { collection, id } = useParams();
-    const projectList = collection === "projects" ? projects : hiveProjects;
+    const projectCollections = { fullstack, frontend, systems };
+    const projectList = projectCollections[collection] ?? [];
     const p = projectList.find(pr => pr.id === id);
 
     if (!p) {

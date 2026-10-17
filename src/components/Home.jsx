@@ -36,7 +36,7 @@ export default function Home() {
     return (
         <section className="pt-12 pb-12 relative">
             <section className="mt-8">
-                <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
                         className="relative min-h-[500px] md:min-h-[500px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-6 shadow-xl transition bg-amber-100 flex flex-col cursor-pointer" onClick={handleShowPong}
@@ -46,7 +46,7 @@ export default function Home() {
                             <h1 className="text-5xl md:text-8xl text-orange-600 font-bold max-w-sm">
                                 Hi, I'm Tom.
                             </h1>
-                            <p className="text-orange-600 text-base text-xl font-semibold md:text-2xl leading-relaxed sm:text-right">
+                            <p className="text-orange-600 text-base text-xl font-semibold md:text-3xl leading-relaxed sm:text-right">
                                 A software developer building robust, full-stack architectures engineered to solve real-world problems.
                             </p>
                         </div>

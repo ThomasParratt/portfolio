@@ -72,7 +72,7 @@ export default function Home() {
                                 and{" "}
                                 <a href="mailto:thomasparratt@googlemail.com" className="underline underline-offset-2 hover:text-orange-300" onClick={(e) => e.stopPropagation()}>
                                     contact
-                                </a>{" "}me if you have any enquiries, questions, feedback, or just want a chat.
+                                </a>{" "}me if you have any enquiries, questions, or feedback.
                             </p>
 
                             {/* Bottom right icons */}

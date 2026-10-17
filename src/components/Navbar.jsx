@@ -37,9 +37,9 @@ export default function Navbar() {
                     >
                         {/* Hamburger icon */}
                         <div className="flex flex-col justify-center gap-1.5 w-6 h-5">
-                            <div className="w-6 h-0.5 bg-sky-200 transition-all origin-center" style={{ transform: menuOpen ? 'translateY(8px) rotate(45deg)' : 'none' }} />
-                            <div className="w-6 h-0.5 bg-sky-200 transition-all" style={{ opacity: menuOpen ? 0 : 1 }} />
-                            <div className="w-6 h-0.5 bg-sky-200 transition-all" style={{ transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }} />
+                            <div className="w-6 h-0.5 bg-sky-900 transition-all origin-center" style={{ transform: menuOpen ? 'translateY(8px) rotate(45deg)' : 'none' }} />
+                            <div className="w-6 h-0.5 bg-sky-900 transition-all" style={{ opacity: menuOpen ? 0 : 1 }} />
+                            <div className="w-6 h-0.5 bg-sky-900 transition-all" style={{ transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }} />
                         </div>
                     </button>
                 </div>

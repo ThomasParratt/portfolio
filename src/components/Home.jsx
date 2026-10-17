@@ -39,14 +39,14 @@ export default function Home() {
                 <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <article
                         ref={boxRef}
-                        className="relative min-h-[500px] md:min-h-[500px] md:col-span-2 border-2 border-orange-600 rounded-2xl p-6 shadow-xl transition bg-amber-100 flex flex-col cursor-pointer" onClick={handleShowPong}
+                        className="relative min-h-[500px] md:min-h-[500px] md:col-span-2 border-2 border-sky-900 rounded-2xl p-6 shadow-xl transition bg-sky-200 flex flex-col cursor-pointer" onClick={handleShowPong}
                     >
                         {/* Top content */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <h1 className="text-5xl md:text-8xl text-orange-600 font-bold max-w-sm">
+                            <h1 className="text-5xl md:text-8xl text-sky-900 font-bold max-w-sm">
                                 Hi, I'm Tom.
                             </h1>
-                            <p className="text-orange-600 text-base text-xl font-semibold md:text-3xl leading-relaxed sm:text-right">
+                            <p className="text-sky-900 text-base text-xl font-semibold md:text-3xl leading-relaxed sm:text-right">
                                 A software developer building robust, full-stack architectures engineered to solve real-world problems.
                             </p>
                         </div>
@@ -66,7 +66,7 @@ export default function Home() {
                         {/* Bottom section */}
                         <div className="mt-auto w-full flex flex-col md:flex-row justify-between items-end gap-4">
                             {/* Bottom left text */}
-                            <p className="text-1xl md:text-2xl font-semibold text-orange-600 max-w-full leading-relaxed">
+                            <p className="text-1xl md:text-2xl font-semibold text-sky-900 max-w-full leading-relaxed">
                                 Take a look at my{" "}
                                 <Link to="/projects" className="underline underline-offset-2 hover:text-orange-300" onClick={(e) => e.stopPropagation()}>projects</Link>{" "}
                                 and{" "}

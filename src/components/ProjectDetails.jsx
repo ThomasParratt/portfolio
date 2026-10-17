@@ -23,9 +23,9 @@ export default function ProjectDetails() {
         <section className="pt-12 pb-12 relative mt-8">
             <div className="max-w-5xl mx-auto px-6 space-y-6">
                 <article
-                    className="relative min-h-[500px] md:min-h-[400px] border-2 border-orange-600 rounded-2xl p-4 shadow-xl transition bg-amber-100"
+                    className="relative min-h-[500px] md:min-h-[400px] border-2 border-sky-900 rounded-2xl p-4 shadow-xl transition bg-sky-200"
                 >
-                    <div className="text-orange-600">
+                    <div className="text-sky-900">
                         <h1 className="text-4xl font-bold">{p.title}</h1>
                         {p.video && <video className="mt-6" src={p.video} controls autoPlay muted loop playsInline></video>}
                         {p.image && <img className="mt-6" src={p.image} controls autoPlay muted loop playsInline></img>}

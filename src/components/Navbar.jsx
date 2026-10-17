@@ -22,9 +22,9 @@ export default function Navbar() {
 
                 {/* Desktop menu */}
                 <ul className="hidden md:flex gap-6 items-center text-sm">
-                    <li><Link to="/" className="hover:underline text-orange-600 text-xl font-semibold">Home</Link></li>
-                    <li><Link to="/about" className="hover:underline text-orange-600 text-xl font-semibold">About</Link></li>
-                    <li><Link to="/projects" className="hover:underline text-orange-600 text-xl font-semibold">Projects</Link></li>
+                    <li><Link to="/" className="hover:underline text-sky-800 text-xl font-semibold">Home</Link></li>
+                    <li><Link to="/about" className="hover:underline text-sky-800 text-xl font-semibold">About</Link></li>
+                    <li><Link to="/projects" className="hover:underline text-sky-800 text-xl font-semibold">Projects</Link></li>
                     {/*<li><Link to="/jacob" className="hover:underline text-orange-600 text-lg font-semibold">Jacob's stuff</Link></li>*/}
                 </ul>
 

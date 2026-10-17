@@ -2,11 +2,11 @@ export default function About() {
     return (
         <section className="pt-12 pb-12 relative mt-8">
             <div className="max-w-5xl mx-auto px-6 space-y-6">
-                <h2 className="text-2xl font-extrabold text-orange-600">ABOUT ME</h2>
+                <h2 className="text-2xl font-extrabold">ABOUT ME</h2>
                 <article
-                    className="relative min-h-[500px] md:min-h-[400px] border-2 border-orange-600 rounded-2xl p-6 shadow-xl transition bg-amber-100"
+                    className="relative min-h-[500px] md:min-h-[400px] border-2 border-sky-900 rounded-2xl p-6 shadow-xl transition bg-sky-200"
                 >
-                    <div className="text-orange-600 font-semibold md:text-xl leading-relaxed space-y-6">
+                    <div className="text-sky-900 font-semibold md:text-xl leading-relaxed space-y-6">
                         <p>
                             I am a Software Engineer specializing in full-stack application development and low-level systems architecture. 
                             After successfully navigating the rigorous, peer-learning core curriculum at{" "}

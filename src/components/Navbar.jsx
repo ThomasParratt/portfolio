@@ -37,9 +37,9 @@ export default function Navbar() {
                     >
                         {/* Hamburger icon */}
                         <div className="flex flex-col justify-center gap-1.5 w-6 h-5">
-                            <div className="w-6 h-0.5 bg-orange-600 transition-all origin-center" style={{ transform: menuOpen ? 'translateY(8px) rotate(45deg)' : 'none' }} />
-                            <div className="w-6 h-0.5 bg-orange-600 transition-all" style={{ opacity: menuOpen ? 0 : 1 }} />
-                            <div className="w-6 h-0.5 bg-orange-600 transition-all" style={{ transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }} />
+                            <div className="w-6 h-0.5 bg-sky-200 transition-all origin-center" style={{ transform: menuOpen ? 'translateY(8px) rotate(45deg)' : 'none' }} />
+                            <div className="w-6 h-0.5 bg-sky-200 transition-all" style={{ opacity: menuOpen ? 0 : 1 }} />
+                            <div className="w-6 h-0.5 bg-sky-200 transition-all" style={{ transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }} />
                         </div>
                     </button>
                 </div>
@@ -48,7 +48,7 @@ export default function Navbar() {
             {/* Mobile menu */}
             {menuOpen && (
                 <div className="md:hidden bg-white/95 backdrop-blur shadow-md">
-                    <ul className="flex flex-col gap-4 p-6 text-lg font-semibold text-orange-600">
+                    <ul className="flex flex-col gap-4 p-6 text-lg font-semibold text-sky-900">
                         <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
                         <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
                         <li><Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link></li>

@@ -6,11 +6,15 @@ const buttonClass = "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-
 
 export default function ProjectCard({p, detailTo}) {
     const displayClass = p.liveInternal ? "hidden lg:flex" : "flex";
+    const featuredClass = p.featured ? "md:col-span-2" : "";
     const clickableClass = detailTo ? "hover:-translate-y-1 hover:shadow-2xl focus-within:-translate-y-1 focus-within:shadow-2xl" : "";
     return (
-        <article className={`h-full flex-col border-4 border-white rounded-2xl p-4 shadow-xl transition bg-sky-700 ${displayClass} ${clickableClass}`}>
+        <article className={`h-full flex-col border-4 border-white rounded-2xl p-4 shadow-xl transition bg-sky-700 ${displayClass} ${featuredClass} ${clickableClass}`}>
             {detailTo ? (
                 <Link to={detailTo} className="block">
+                    {p.badge && (
+                        <span className="inline-block mb-2 px-2 py-0.5 border-2 border-white rounded-full text-xs font-bold uppercase tracking-wide text-white">{p.badge}</span>
+                    )}
                     <h3 className="font-semibold text-xl text-white">{p.title}</h3>
                     <p className="text-sm text-white mt-2">{p.description}</p>
                     <div className="mt-3 flex flex-wrap gap-2 text-sm text-white">
@@ -19,6 +23,9 @@ export default function ProjectCard({p, detailTo}) {
                 </Link>
             ) : (
                 <>
+                    {p.badge && (
+                        <span className="inline-block mb-2 px-2 py-0.5 border-2 border-white rounded-full text-xs font-bold uppercase tracking-wide text-white">{p.badge}</span>
+                    )}
                     <h3 className="font-semibold text-xl text-white">{p.title}</h3>
                     <p className="text-sm text-white mt-2">{p.description}</p>
                     <div className="mt-3 flex flex-wrap gap-2 text-sm text-white">

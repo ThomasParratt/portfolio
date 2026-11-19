@@ -13,7 +13,7 @@ const frontend = [
         title: 'React Word Guesser',
         description: 'My version of Wordle written in React and Tailwind CSS.',
         tech: ['React', 'JavaScript', 'Tailwind CSS'],
-        repo: 'https://github.com/ThomasParratt/portfolio',
+        repo: 'https://github.com/ThomasParratt/WordGuesser',
         live: 'https://word-guesser-iota.vercel.app/'
     },
     {
@@ -22,6 +22,7 @@ const frontend = [
         title: 'Pong!',
         description: 'My version of the classic Pong game written in TypeScript. Can be played alone (vs Computer) or with a friend.',
         tech: ['React', 'TypeScript', 'Node'],
+        repo: 'https://github.com/ThomasParratt/pong',
         liveInternal: '/pong'
     }
 ]

@@ -14,7 +14,7 @@ export default function About() {
                                 href="https://hive.fi" 
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="underline underline-offset-4 font-bold hover:text-orange-700"
+                                className="underline underline-offset-4 font-bold hover:text-sky-600"
                             >
                                 Hive Helsinki
                             </a>

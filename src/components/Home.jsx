@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import Projects from './Projects'
-import me from '../assets/me.jpg'
+import me from '../assets/me.webp'
 import PongGameFace from '../games/PongGameFace'
 import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"

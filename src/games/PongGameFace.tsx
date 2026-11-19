@@ -10,7 +10,7 @@ export default function PongGameFace({ width, height }) {
     let twoPlayerMode = false; // Default is one-player mode
 
     const ballImg = new Image();
-    ballImg.src = '/me.jpg'; 
+    ballImg.src = '/me.webp'; 
     ballImg.onload = () => {
         // Only start the game loop once the image is loaded
         ballReset(twoPlayerMode, canvasWidth, canvasHeight);

@@ -1,5 +1,4 @@
 import minishell from "../assets/Minishell.mp4"
-import cub3d from "../assets/cub3d.gif"
 
 const systems = [
     {

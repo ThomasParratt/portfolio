@@ -1,39 +1,53 @@
+const skills = [
+    { label: 'Languages', items: ['TypeScript', 'JavaScript', 'C', 'C++', 'Python', 'SQL', 'HTML / CSS'] },
+    { label: 'Frameworks', items: ['React', 'Next.js', 'Node.js', 'Express', 'Prisma', 'Tailwind CSS', 'Zod'] },
+    { label: 'Tools', items: ['Git', 'Docker', 'GitHub Actions', 'PostgreSQL', 'Vitest', 'Vite', 'AWS', 'Valgrind'] },
+]
+
 export default function About() {
     return (
         <section className="pt-12 pb-12 relative mt-8">
             <div className="max-w-5xl mx-auto px-6 space-y-6">
                 <h2 className="text-2xl font-extrabold">ABOUT ME</h2>
-                <article
-                    className="relative min-h-[500px] md:min-h-[400px] border-2 border-sky-900 rounded-2xl p-6 shadow-xl transition bg-sky-200"
-                >
+                <article className="relative border-2 border-sky-900 rounded-2xl p-6 shadow-xl transition bg-sky-200">
                     <div className="text-sky-900 font-semibold md:text-xl leading-relaxed space-y-6">
                         <p>
-                            I am a Software Engineer specializing in full-stack application development and low-level systems architecture. 
-                            After successfully navigating the rigorous, peer-learning core curriculum at{" "}
+                            I'm a Software Engineer working across full-stack web development and low-level systems.
+                            I completed the peer-learning core curriculum at{" "}
                             <a
-                                href="https://hive.fi" 
+                                href="https://hive.fi"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="underline underline-offset-4 font-bold hover:text-sky-600"
                             >
                                 Hive Helsinki
                             </a>
-                            , I have cultivated a deep, self-directed engineering mindset. Operating entirely without traditional teachers or lectures, 
-                            I mastered how to deconstruct complex algorithmic challenges, enforce memory safety in strict environments, and build robust software frameworks entirely from scratch.
+                            , where there are no teachers or lectures. That taught me to break down hard problems on my own,
+                            write memory-safe code under strict constraints, and build software from scratch.
                         </p>
-                        
+
                         <p>
-                            Alongside my engineering background, I have a professional career as an English as a Second Language (ESL) Teacher, 
-                            structuring and delivering technical and conversational curricula to learners across global corporate and academic backgrounds. 
-                            This cross-disciplinary experience uniquely equips me with advanced communication skills, high empathy, and a proven capability 
-                            to clearly articulate technical, abstract concepts to cross-functional teams and stakeholders.
+                            Before engineering, I worked as an ESL teacher for corporate and academic learners worldwide.
+                            I bring that experience to engineering teams: I can explain technical ideas clearly to anyone.
                         </p>
-                        
+
                         <p>
-                            I specialize in building type-safe, containerized web ecosystems 
-                            and am actively looking to bring my blend of low-level software foundations, modern web engineering, and communication-driven leadership 
-                            to a Junior Developer or Full-Stack Engineer role.
+                            I build type-safe, containerized web applications, and I'm looking for a Junior Developer or
+                            Full-Stack Engineer role.
                         </p>
+                    </div>
+
+                    <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                        {skills.map(group => (
+                            <div key={group.label} className="rounded-xl border-2 border-sky-900 bg-sky-100 p-4">
+                                <h3 className="text-sm font-extrabold tracking-wide text-sky-900 uppercase mb-3">{group.label}</h3>
+                                <ul className="flex flex-wrap gap-2 text-sm text-sky-950">
+                                    {group.items.map(item => (
+                                        <li key={item} className="px-2 py-1 rounded-2xl text-white bg-sky-500">{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
                 </article>
             </div>

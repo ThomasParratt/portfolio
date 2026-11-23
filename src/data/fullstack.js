@@ -1,9 +1,12 @@
+import lease from "../assets/lease-loop.mp4"
+
 const fullstack = [
     {
         id: 'p4',
         title: 'Lease Loop (Northfina × Hive Hackathon)',
         featured: true,
         badge: 'Hackathon Winner · Nov 2026',
+        video: lease,
         glance: {
             team: '3 developers, 24 hours',
             role: 'Asset status model, row schemas, application decision race, question-flow validation, contract signing and the signed audit chain, plus pull request reviews',

@@ -1,5 +1,5 @@
 const skills = [
-    { label: 'Languages', items: ['TypeScript', 'JavaScript', 'C', 'C++', 'Python', 'SQL', 'HTML / CSS'] },
+    { label: 'Languages', items: ['TypeScript', 'JavaScript', 'C', 'C++', 'SQL', 'HTML / CSS'] },
     { label: 'Frameworks', items: ['React', 'Next.js', 'Node.js', 'Express', 'Prisma', 'Tailwind CSS', 'Zod'] },
     { label: 'Tools', items: ['Git', 'Docker', 'GitHub Actions', 'PostgreSQL', 'Vitest', 'Vite', 'AWS', 'Valgrind'] },
 ]

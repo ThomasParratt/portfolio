@@ -1,4 +1,5 @@
 import lease from "../assets/lease-loop.mp4"
+import leaseThumb from "../assets/lease-loop-thumb.webp"
 
 const fullstack = [
     {
@@ -7,6 +8,7 @@ const fullstack = [
         featured: true,
         badge: 'Hackathon Winner · Nov 2026',
         video: lease,
+        thumb: { src: leaseThumb, width: 800, height: 340 },
         glance: {
             team: '3 developers, 24 hours',
             role: 'Asset status model, row schemas, application decision race, question-flow validation, contract signing and the signed audit chain, plus pull request reviews',
